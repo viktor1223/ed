@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Tutor - Knowledge Graph</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --border: #2a2d3a;
+            --text: #e1e4ed;
+            --text-muted: #8b8fa3;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 20px 32px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        header h1 span {
+            color: var(--accent-light);
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .controls button {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: border-color 0.15s;
+        }
+
+        .controls button:hover {
+            border-color: var(--accent);
+        }
+
+        .controls button.active {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        .main-layout {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .graph-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .sidebar {
+            width: 380px;
+            border-left: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 24px;
+            background: var(--surface);
+        }
+
+        .sidebar h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+        }
+
+        .mastery-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mastery-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            cursor: pointer;
+            transition: border-color 0.15s, transform 0.1s;
+        }
+
+        .mastery-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .mastery-card.selected {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        .mastery-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .mastery-card .card-header .level {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .mastery-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .mastery-bar-container {
+            background: var(--surface);
+            border-radius: 6px;
+            height: 8px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .mastery-bar {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.6s ease, background 0.3s;
+        }
+
+        .mastery-card .mastery-value {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .mastery-card .misconceptions-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .detail-panel {
+            margin-top: 24px;
+            display: none;
+        }
+
+        .detail-panel.visible {
+            display: block;
+        }
+
+        .detail-panel h2 {
+            margin-bottom: 12px;
+        }
+
+        .detail-section {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .detail-section h4 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .misconception-item {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .misconception-item:last-child {
+            border-bottom: none;
+        }
+
+        .misconception-item .label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .misconception-item .desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .example-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+            font-size: 0.75rem;
+        }
+
+        .example-row span {
+            background: var(--surface);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .example-row .wrong {
+            color: var(--danger);
+        }
+
+        .example-row .correct {
+            color: var(--success);
+        }
+
+        .bkt-params {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .bkt-param {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            background: var(--surface);
+            border-radius: 6px;
+        }
+
+        .bkt-param .param-name {
+            color: var(--text-muted);
+        }
+
+        .bkt-param .param-value {
+            font-weight: 600;
+            font-family: 'SF Mono', monospace;
+        }
+
+        .sim-controls {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .sim-controls button {
+            background: var(--accent);
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .sim-controls button:hover {
+            opacity: 0.85;
+        }
+
+        .sim-controls button.secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .sim-controls button.danger {
+            background: transparent;
+            border: 1px solid var(--danger);
+            color: var(--danger);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 100;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><span>Algebra Tutor</span> / Knowledge Graph</h1>
+        <div class="controls">
+            <button id="btn-simulate" class="active">Simulate Practice</button>
+            <button id="btn-reset" class="secondary">Reset Mastery</button>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <div class="graph-container">
+            <canvas id="graph-canvas"></canvas>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#ef4444"></div> Mastery &lt; 40%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#f59e0b"></div> Mastery 40-69%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#22c55e"></div> Mastery 70-84%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#6366f1"></div> Mastery &ge; 85% (Mastered)
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h2>Concept Mastery</h2>
+            <div id="mastery-list" class="mastery-list"></div>
+
+            <div id="detail-panel" class="detail-panel">
+                <h2>Concept Details</h2>
+                <div id="detail-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // ─── DATA ────────────────────────────────────────────────────────────────
+        let graphData = null;
+        let studentState = {};
+        let selectedConceptId = null;
+
+        async function loadGraph() {
+            const resp = await fetch('./data/knowledge_graph.json');
+            graphData = await resp.json();
+            graphData.concepts.forEach(c => {
+                studentState[c.id] = { mastery: graphData.metadata.mastery_initial, attempts: 0 };
+            });
+            render();
+        }
+
+        // ─── BKT UPDATE ─────────────────────────────────────────────────────────
+        function bktUpdate(conceptId, correct) {
+            const concept = graphData.concepts.find(c => c.id === conceptId);
+            const { p_guess, p_slip, p_learn } = concept.bkt_params;
+            const state = studentState[conceptId];
+            const pL = state.mastery;
+
+            let pLGivenObs;
+            if (correct) {
+                pLGivenObs = (pL * (1 - p_slip)) / (pL * (1 - p_slip) + (1 - pL) * p_guess);
+            } else {
+                pLGivenObs = (pL * p_slip) / (pL * p_slip + (1 - pL) * (1 - p_guess));
+            }
+
+            state.mastery = pLGivenObs + (1 - pLGivenObs) * p_learn;
+            state.mastery = Math.max(0, Math.min(1, state.mastery));
+            state.attempts++;
+        }
+
+        // ─── MASTERY COLOR ──────────────────────────────────────────────────────
+        function masteryColor(m) {
+            if (m >= graphData.metadata.mastery_threshold) return '#6366f1';
+            if (m >= 0.70) return '#22c55e';
+            if (m >= 0.40) return '#f59e0b';
+            return '#ef4444';
+        }
+
+        function masteryColorRGB(m) {
+            if (m >= graphData.metadata.mastery_threshold) return [99, 102, 241];
+            if (m >= 0.70) return [34, 197, 94];
+            if (m >= 0.40) return [245, 158, 11];
+            return [239, 68, 68];
+        }
+
+        // ─── GRAPH RENDERING ────────────────────────────────────────────────────
+        const canvas = document.getElementById('graph-canvas');
+        const ctx = canvas.getContext('2d');
+        let nodePositions = {};
+        let hoveredNode = null;
+        let dpr = window.devicePixelRatio || 1;
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth * dpr;
+            canvas.height = container.clientHeight * dpr;
+            canvas.style.width = container.clientWidth + 'px';
+            canvas.style.height = container.clientHeight + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function computeLayout() {
+            const container = canvas.parentElement;
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            const concepts = graphData.concepts;
+            const n = concepts.length;
+
+            // Vertical chain layout with slight curve
+            const paddingY = 80;
+            const usableH = h - paddingY * 2;
+            const stepY = usableH / (n - 1);
+            const centerX = w / 2;
+
+            concepts.forEach((c, i) => {
+                const offsetX = Math.sin(i * 0.8) * 40;
+                nodePositions[c.id] = {
+                    x: centerX + offsetX,
+                    y: paddingY + i * stepY,
+                    radius: 38
+                };
+            });
+        }
+
+        function drawGraph() {
+            if (!graphData) return;
+            const container = canvas.parentElement;
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw edges
+            graphData.edges.forEach(edge => {
+                const from = nodePositions[edge.from];
+                const to = nodePositions[edge.to];
+                if (!from || !to) return;
+
+                ctx.beginPath();
+                ctx.moveTo(from.x, from.y + from.radius);
+
+                // Bezier curve for the edge
+                const midY = (from.y + to.y) / 2;
+                const cpOffset = (to.x - from.x) * 0.5;
+                ctx.bezierCurveTo(
+                    from.x + cpOffset, midY,
+                    to.x - cpOffset, midY,
+                    to.x, to.y - to.radius
+                );
+
+                ctx.strokeStyle = 'rgba(99,102,241,0.25)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Arrowhead
+                const angle = Math.atan2(to.y - to.radius - midY, to.x - (to.x - cpOffset));
+                const arrowLen = 10;
+                ctx.beginPath();
+                ctx.moveTo(to.x, to.y - to.radius);
+                ctx.lineTo(
+                    to.x - arrowLen * Math.cos(angle - 0.4),
+                    to.y - to.radius - arrowLen * Math.sin(angle - 0.4)
+                );
+                ctx.moveTo(to.x, to.y - to.radius);
+                ctx.lineTo(
+                    to.x - arrowLen * Math.cos(angle + 0.4),
+                    to.y - to.radius - arrowLen * Math.sin(angle + 0.4)
+                );
+                ctx.strokeStyle = 'rgba(99,102,241,0.4)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            });
+
+            // Draw nodes
+            graphData.concepts.forEach(concept => {
+                const pos = nodePositions[concept.id];
+                const state = studentState[concept.id];
+                const m = state.mastery;
+                const color = masteryColor(m);
+                const rgb = masteryColorRGB(m);
+                const isHovered = hoveredNode === concept.id;
+                const isSelected = selectedConceptId === concept.id;
+                const r = pos.radius + (isHovered ? 4 : 0);
+
+                // Glow
+                const gradient = ctx.createRadialGradient(pos.x, pos.y, r * 0.5, pos.x, pos.y, r * 2.5);
+                gradient.addColorStop(0, `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.15)`);
+                gradient.addColorStop(1, `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0)`);
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, r * 2.5, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Mastery ring (background)
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, r + 4, -Math.PI / 2, Math.PI * 2 - Math.PI / 2);
+                ctx.strokeStyle = 'rgba(42,45,58,0.8)';
+                ctx.lineWidth = 4;
+                ctx.stroke();
+
+                // Mastery ring (fill)
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, r + 4, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * m);
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 4;
+                ctx.stroke();
+
+                // Node circle
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2);
+                ctx.fillStyle = isSelected ? `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.2)` : 'rgba(26,29,39,0.95)';
+                ctx.fill();
+                ctx.strokeStyle = isSelected ? color : (isHovered ? color : 'rgba(42,45,58,0.8)');
+                ctx.lineWidth = isSelected ? 2 : 1.5;
+                ctx.stroke();
+
+                // Level number
+                ctx.fillStyle = color;
+                ctx.font = 'bold 14px -apple-system, system-ui, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(concept.level, pos.x, pos.y - 8);
+
+                // Mastery percentage
+                ctx.fillStyle = 'rgba(225,228,237,0.9)';
+                ctx.font = '600 11px -apple-system, system-ui, sans-serif';
+                ctx.fillText(Math.round(m * 100) + '%', pos.x, pos.y + 8);
+
+                // Concept name (below node)
+                ctx.fillStyle = isSelected ? 'rgba(225,228,237,1)' : 'rgba(225,228,237,0.7)';
+                ctx.font = '500 12px -apple-system, system-ui, sans-serif';
+                ctx.fillText(concept.name, pos.x, pos.y + r + 20);
+            });
+        }
+
+        // ─── SIDEBAR RENDERING ──────────────────────────────────────────────────
+        function renderSidebar() {
+            const list = document.getElementById('mastery-list');
+            list.innerHTML = '';
+
+            graphData.concepts.forEach(concept => {
+                const state = studentState[concept.id];
+                const m = state.mastery;
+                const color = masteryColor(m);
+                const card = document.createElement('div');
+                card.className = 'mastery-card' + (selectedConceptId === concept.id ? ' selected' : '');
+                card.innerHTML = `
+          <div class="card-header">
+            <h3>${concept.name}</h3>
+            <span class="level">Level ${concept.level}</span>
+          </div>
+          <div class="mastery-bar-container">
+            <div class="mastery-bar" style="width:${m * 100}%;background:${color}"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="misconceptions-count">${concept.misconceptions.length} misconception${concept.misconceptions.length !== 1 ? 's' : ''} tracked</span>
+            <span class="mastery-value" style="color:${color}">${Math.round(m * 100)}%</span>
+          </div>
+        `;
+                card.addEventListener('click', () => selectConcept(concept.id));
+                list.appendChild(card);
+            });
+        }
+
+        function renderDetail() {
+            const panel = document.getElementById('detail-panel');
+            const content = document.getElementById('detail-content');
+
+            if (!selectedConceptId) {
+                panel.classList.remove('visible');
+                return;
+            }
+
+            panel.classList.add('visible');
+            const concept = graphData.concepts.find(c => c.id === selectedConceptId);
+            const state = studentState[selectedConceptId];
+            const threshold = graphData.metadata.mastery_threshold;
+
+            let prereqNames = concept.prerequisites.map(pid => {
+                const p = graphData.concepts.find(c => c.id === pid);
+                return p ? p.name : pid;
+            });
+
+            let html = `
+        <div class="detail-section">
+          <h4>Overview</h4>
+          <p style="font-size:0.85rem;line-height:1.5;color:var(--text-muted)">${concept.description}</p>
+          <p style="font-size:0.8rem;margin-top:8px;color:var(--text-muted)">
+            Prerequisites: ${prereqNames.length ? prereqNames.join(', ') : 'None (entry concept)'}
+          </p>
+          <p style="font-size:0.8rem;color:var(--text-muted)">
+            MaE IDs: ${concept.mae_ids.join(', ')} &middot; Attempts: ${state.attempts}
+          </p>
+        </div>
+
+        <div class="detail-section">
+          <h4>BKT Parameters</h4>
+          <div class="bkt-params">
+            <div class="bkt-param"><span class="param-name">P(init)</span><span class="param-value">${concept.bkt_params.p_init}</span></div>
+            <div class="bkt-param"><span class="param-name">P(learn)</span><span class="param-value">${concept.bkt_params.p_learn}</span></div>
+            <div class="bkt-param"><span class="param-name">P(guess)</span><span class="param-value">${concept.bkt_params.p_guess}</span></div>
+            <div class="bkt-param"><span class="param-name">P(slip)</span><span class="param-value">${concept.bkt_params.p_slip}</span></div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h4>Tracked Misconceptions</h4>
+      `;
+
+            concept.misconceptions.forEach(misc => {
+                html += `
+          <div class="misconception-item">
+            <div class="label">${misc.label}</div>
+            <div class="desc">${misc.description}</div>
+            ${misc.examples.map(ex => `
+              <div class="example-row">
+                <span>${ex.problem}</span>
+                <span class="wrong">Wrong: ${ex.wrong}</span>
+                <span class="correct">Correct: ${ex.correct}</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+            });
+
+            html += `</div>`;
+
+            html += `
+        <div class="sim-controls">
+          <button onclick="simulateCorrect('${concept.id}')">Simulate Correct Answer</button>
+          <button class="secondary" onclick="simulateWrong('${concept.id}')">Simulate Wrong Answer</button>
+        </div>
+      `;
+
+            content.innerHTML = html;
+        }
+
+        // ─── INTERACTION ────────────────────────────────────────────────────────
+        function selectConcept(id) {
+            selectedConceptId = selectedConceptId === id ? null : id;
+            render();
+        }
+
+        function simulateCorrect(id) {
+            bktUpdate(id, true);
+            const m = studentState[id].mastery;
+            showToast(`Correct answer recorded. Mastery: ${Math.round(m * 100)}%`);
+            render();
+        }
+
+        function simulateWrong(id) {
+            bktUpdate(id, false);
+            const m = studentState[id].mastery;
+            showToast(`Incorrect answer recorded. Mastery: ${Math.round(m * 100)}%`);
+            render();
+        }
+
+        function simulateSession() {
+            // Simulate a short practice session: 3 random interactions
+            const concepts = graphData.concepts;
+            for (let i = 0; i < 3; i++) {
+                const c = concepts[Math.floor(Math.random() * concepts.length)];
+                const correct = Math.random() > 0.4;
+                bktUpdate(c.id, correct);
+            }
+            showToast('Simulated 3 practice interactions');
+            render();
+        }
+
+        function resetMastery() {
+            graphData.concepts.forEach(c => {
+                studentState[c.id] = { mastery: graphData.metadata.mastery_initial, attempts: 0 };
+            });
+            showToast('Mastery reset to initial values');
+            render();
+        }
+
+        function showToast(msg) {
+            const el = document.getElementById('toast');
+            el.textContent = msg;
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 2200);
+        }
+
+        // ─── CANVAS MOUSE HANDLING ──────────────────────────────────────────────
+        canvas.addEventListener('mousemove', (e) => {
+            if (!graphData) return;
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+
+            let found = null;
+            graphData.concepts.forEach(c => {
+                const pos = nodePositions[c.id];
+                const dist = Math.sqrt((mx - pos.x) ** 2 + (my - pos.y) ** 2);
+                if (dist < pos.radius + 10) found = c.id;
+            });
+
+            if (found !== hoveredNode) {
+                hoveredNode = found;
+                canvas.style.cursor = found ? 'pointer' : 'default';
+                drawGraph();
+            }
+        });
+
+        canvas.addEventListener('click', (e) => {
+            if (hoveredNode) selectConcept(hoveredNode);
+        });
+
+        // ─── WIRE UP BUTTONS ────────────────────────────────────────────────────
+        document.getElementById('btn-simulate').addEventListener('click', simulateSession);
+        document.getElementById('btn-reset').addEventListener('click', resetMastery);
+
+        // ─── RENDER LOOP ────────────────────────────────────────────────────────
+        function render() {
+            resizeCanvas();
+            computeLayout();
+            drawGraph();
+            renderSidebar();
+            renderDetail();
+        }
+
+        window.addEventListener('resize', render);
+        loadGraph();
+    </script>
+</body>
+
+</html>

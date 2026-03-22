@@ -1,0 +1,8 @@
+{
+  "model": "TF-IDF + LogisticRegression",
+  "train_size": 414,
+  "val_accuracy": 0.23076923076923078,
+  "val_f1_macro": 0.21407963381647593,
+  "test_accuracy": 0.35555555555555557,
+  "test_f1_macro": 0.3453216374269006
+}

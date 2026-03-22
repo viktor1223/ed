@@ -1,0 +1,198 @@
+[
+    {
+        "problem_id": "iso_1",
+        "concept": "integer_sign_ops",
+        "difficulty": "easy",
+        "problem_text": "Simplify: -4 + (-6)",
+        "correct_answer": "-10"
+    },
+    {
+        "problem_id": "iso_2",
+        "concept": "integer_sign_ops",
+        "difficulty": "easy",
+        "problem_text": "Simplify: 5 - 9",
+        "correct_answer": "-4"
+    },
+    {
+        "problem_id": "iso_3",
+        "concept": "integer_sign_ops",
+        "difficulty": "medium",
+        "problem_text": "Simplify: -3 × (-7)",
+        "correct_answer": "21"
+    },
+    {
+        "problem_id": "iso_4",
+        "concept": "integer_sign_ops",
+        "difficulty": "medium",
+        "problem_text": "Simplify: 8 - (-5)",
+        "correct_answer": "13"
+    },
+    {
+        "problem_id": "iso_5",
+        "concept": "integer_sign_ops",
+        "difficulty": "hard",
+        "problem_text": "Simplify: -2 × 3 + (-4)",
+        "correct_answer": "-10"
+    },
+    {
+        "problem_id": "iso_6",
+        "concept": "integer_sign_ops",
+        "difficulty": "hard",
+        "problem_text": "Simplify: (-5) × (-2) - 3",
+        "correct_answer": "7"
+    },
+    {
+        "problem_id": "ooo_1",
+        "concept": "order_of_operations",
+        "difficulty": "easy",
+        "problem_text": "Evaluate: 3 + 2 × 5",
+        "correct_answer": "13"
+    },
+    {
+        "problem_id": "ooo_2",
+        "concept": "order_of_operations",
+        "difficulty": "easy",
+        "problem_text": "Evaluate: 10 - 4 ÷ 2",
+        "correct_answer": "8"
+    },
+    {
+        "problem_id": "ooo_3",
+        "concept": "order_of_operations",
+        "difficulty": "medium",
+        "problem_text": "Evaluate: (6 + 2) × 3",
+        "correct_answer": "24"
+    },
+    {
+        "problem_id": "ooo_4",
+        "concept": "order_of_operations",
+        "difficulty": "medium",
+        "problem_text": "Evaluate: 2 + 3² - 1",
+        "correct_answer": "10"
+    },
+    {
+        "problem_id": "ooo_5",
+        "concept": "order_of_operations",
+        "difficulty": "hard",
+        "problem_text": "Evaluate: (4 + 1)² - 3 × 2",
+        "correct_answer": "19"
+    },
+    {
+        "problem_id": "dp_1",
+        "concept": "distributive_property",
+        "difficulty": "easy",
+        "problem_text": "Expand: 3(x + 4)",
+        "correct_answer": "3x + 12"
+    },
+    {
+        "problem_id": "dp_2",
+        "concept": "distributive_property",
+        "difficulty": "easy",
+        "problem_text": "Expand: 5(y - 2)",
+        "correct_answer": "5y - 10"
+    },
+    {
+        "problem_id": "dp_3",
+        "concept": "distributive_property",
+        "difficulty": "medium",
+        "problem_text": "Expand: -2(x + 6)",
+        "correct_answer": "-2x - 12"
+    },
+    {
+        "problem_id": "dp_4",
+        "concept": "distributive_property",
+        "difficulty": "medium",
+        "problem_text": "Expand: -4(a - 3)",
+        "correct_answer": "-4a + 12"
+    },
+    {
+        "problem_id": "dp_5",
+        "concept": "distributive_property",
+        "difficulty": "hard",
+        "problem_text": "Expand: (x + 5)²",
+        "correct_answer": "x² + 10x + 25"
+    },
+    {
+        "problem_id": "dp_6",
+        "concept": "distributive_property",
+        "difficulty": "hard",
+        "problem_text": "Expand: -3(2m - 7)",
+        "correct_answer": "-6m + 21"
+    },
+    {
+        "problem_id": "clt_1",
+        "concept": "combining_like_terms",
+        "difficulty": "easy",
+        "problem_text": "Simplify: 4x + 3x",
+        "correct_answer": "7x"
+    },
+    {
+        "problem_id": "clt_2",
+        "concept": "combining_like_terms",
+        "difficulty": "easy",
+        "problem_text": "Simplify: 6y - 2y",
+        "correct_answer": "4y"
+    },
+    {
+        "problem_id": "clt_3",
+        "concept": "combining_like_terms",
+        "difficulty": "medium",
+        "problem_text": "Simplify: 3x + 5 + 2x - 1",
+        "correct_answer": "5x + 4"
+    },
+    {
+        "problem_id": "clt_4",
+        "concept": "combining_like_terms",
+        "difficulty": "medium",
+        "problem_text": "Simplify: 2a² + 3a²",
+        "correct_answer": "5a²"
+    },
+    {
+        "problem_id": "clt_5",
+        "concept": "combining_like_terms",
+        "difficulty": "hard",
+        "problem_text": "Simplify: 4x + 3y - 2x + y",
+        "correct_answer": "2x + 4y"
+    },
+    {
+        "problem_id": "sle_1",
+        "concept": "solving_linear_equations",
+        "difficulty": "easy",
+        "problem_text": "Solve: x + 7 = 12",
+        "correct_answer": "x = 5"
+    },
+    {
+        "problem_id": "sle_2",
+        "concept": "solving_linear_equations",
+        "difficulty": "easy",
+        "problem_text": "Solve: x - 3 = 8",
+        "correct_answer": "x = 11"
+    },
+    {
+        "problem_id": "sle_3",
+        "concept": "solving_linear_equations",
+        "difficulty": "medium",
+        "problem_text": "Solve: 4x = 28",
+        "correct_answer": "x = 7"
+    },
+    {
+        "problem_id": "sle_4",
+        "concept": "solving_linear_equations",
+        "difficulty": "medium",
+        "problem_text": "Solve: 2x + 5 = 13",
+        "correct_answer": "x = 4"
+    },
+    {
+        "problem_id": "sle_5",
+        "concept": "solving_linear_equations",
+        "difficulty": "hard",
+        "problem_text": "Solve: 3x - 7 = 2x + 4",
+        "correct_answer": "x = 11"
+    },
+    {
+        "problem_id": "sle_6",
+        "concept": "solving_linear_equations",
+        "difficulty": "hard",
+        "problem_text": "Solve: 5(x - 2) = 15",
+        "correct_answer": "x = 5"
+    }
+]

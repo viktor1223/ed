@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (large binaries)
+models/classifier/best/
+models/classifier/checkpoint-*/
+*.safetensors
+*.bin
+
+# Data artifacts that can be regenerated
+data/dataset/
+data/raw/
+
+# Pytest
+.pytest_cache/
+
+# Copilot tracking (dev artifacts)
+.copilot-tracking/

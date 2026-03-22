@@ -1,0 +1,657 @@
+{
+  "classification": {
+    "test_size": 90,
+    "accuracy": 0.9111111111111111,
+    "f1_macro": 0.8859649122807017,
+    "f1_weighted": 0.8981481481481481,
+    "mean_confidence": 0.32699124448829225,
+    "num_errors": 8,
+    "labels": [
+      "clt_add_exponents",
+      "clt_combine_unlike",
+      "clt_constant_as_variable",
+      "clt_multiply_variables",
+      "dist_drop_parens",
+      "dist_first_term_only",
+      "dist_sign_error_negative",
+      "dist_square_over_addition",
+      "leq_divide_wrong_direction",
+      "leq_move_without_sign_change",
+      "leq_reverse_operation",
+      "leq_subtract_wrong_side",
+      "oo_exponent_after_add",
+      "oo_left_to_right",
+      "oo_parentheses_ignored",
+      "sign_always_subtract_smaller",
+      "sign_neg_times_neg",
+      "sign_sub_negative",
+      "sign_sum_negatives"
+    ],
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
+      ]
+    ]
+  },
+  "ablation_topic_metadata": {
+    "standard_accuracy": 0.9111111111111111,
+    "standard_f1": 0.8859649122807017,
+    "topic_accuracy": 0.7888888888888889,
+    "topic_f1": 0.7112010796221323,
+    "delta_accuracy": -0.12222222222222223,
+    "delta_f1": -0.17476383265856943
+  },
+  "simulated_students": {
+    "A_strong_one_weak": {
+      "adaptive": {
+        "avg_correct": 11.7,
+        "avg_mastery": {
+          "integer_sign_ops": 0.972,
+          "order_of_operations": 0.9547,
+          "distributive_property": 0.6137,
+          "combining_like_terms": 0.8108,
+          "solving_linear_equations": 0.7258
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 0.48999999999999994
+      },
+      "random": {
+        "avg_correct": 15.1,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9946,
+          "order_of_operations": 0.8675,
+          "distributive_property": 0.3831,
+          "combining_like_terms": 0.9813,
+          "solving_linear_equations": 0.8865
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.23000000000000004
+      },
+      "fixed_sequence": {
+        "avg_correct": 15.5,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9334,
+          "order_of_operations": 0.9178,
+          "distributive_property": 0.4237,
+          "combining_like_terms": 0.9992,
+          "solving_linear_equations": 0.8801
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 0.2
+      }
+    },
+    "B_weak_overall": {
+      "adaptive": {
+        "avg_correct": 7.5,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9391,
+          "order_of_operations": 0.7559,
+          "distributive_property": 0.438,
+          "combining_like_terms": 0.2915,
+          "solving_linear_equations": 0.05
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 1.0
+      },
+      "random": {
+        "avg_correct": 6.0,
+        "avg_mastery": {
+          "integer_sign_ops": 0.458,
+          "order_of_operations": 0.3838,
+          "distributive_property": 0.4097,
+          "combining_like_terms": 0.4611,
+          "solving_linear_equations": 0.238
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 1.0
+      },
+      "fixed_sequence": {
+        "avg_correct": 6.7,
+        "avg_mastery": {
+          "integer_sign_ops": 0.5831,
+          "order_of_operations": 0.3087,
+          "distributive_property": 0.4965,
+          "combining_like_terms": 0.5246,
+          "solving_linear_equations": 0.2544
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 1.0
+      }
+    },
+    "C_mixed": {
+      "adaptive": {
+        "avg_correct": 9.9,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9562,
+          "order_of_operations": 0.9266,
+          "distributive_property": 0.9669,
+          "combining_like_terms": 0.8342,
+          "solving_linear_equations": 0.3003
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 0.78
+      },
+      "random": {
+        "avg_correct": 11.9,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9564,
+          "order_of_operations": 0.8675,
+          "distributive_property": 0.7595,
+          "combining_like_terms": 0.5622,
+          "solving_linear_equations": 0.341
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 0.5950000000000001
+      },
+      "fixed_sequence": {
+        "avg_correct": 11.9,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9334,
+          "order_of_operations": 0.8409,
+          "distributive_property": 0.5973,
+          "combining_like_terms": 0.6258,
+          "solving_linear_equations": 0.3401
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.5999999999999999
+      }
+    },
+    "D_ceiling": {
+      "adaptive": {
+        "avg_correct": 18.8,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9989,
+          "order_of_operations": 0.998,
+          "distributive_property": 0.9984,
+          "combining_like_terms": 0.9993,
+          "solving_linear_equations": 0.9937
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.0
+      },
+      "random": {
+        "avg_correct": 19.1,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9946,
+          "order_of_operations": 0.8982,
+          "distributive_property": 0.9961,
+          "combining_like_terms": 0.9905,
+          "solving_linear_equations": 0.9909
+        },
+        "concept_id_accuracy": 0.0,
+        "weak_targeting_rate": 0.0
+      },
+      "fixed_sequence": {
+        "avg_correct": 18.4,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9334,
+          "order_of_operations": 0.976,
+          "distributive_property": 0.9418,
+          "combining_like_terms": 0.9992,
+          "solving_linear_equations": 0.9193
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.0
+      }
+    },
+    "E_random_noise": {
+      "adaptive": {
+        "avg_correct": 11.0,
+        "avg_mastery": {
+          "integer_sign_ops": 0.9375,
+          "order_of_operations": 0.7241,
+          "distributive_property": 0.7878,
+          "combining_like_terms": 0.7851,
+          "solving_linear_equations": 0.6183
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.0
+      },
+      "random": {
+        "avg_correct": 10.9,
+        "avg_mastery": {
+          "integer_sign_ops": 0.6379,
+          "order_of_operations": 0.5863,
+          "distributive_property": 0.7696,
+          "combining_like_terms": 0.6618,
+          "solving_linear_equations": 0.8002
+        },
+        "concept_id_accuracy": 1.0,
+        "weak_targeting_rate": 0.0
+      },
+      "fixed_sequence": {
+        "avg_correct": 11.0,
+        "avg_mastery": {
+          "integer_sign_ops": 0.7346,
+          "order_of_operations": 0.4406,
+          "distributive_property": 0.6399,
+          "combining_like_terms": 0.8754,
+          "solving_linear_equations": 0.6957
+        },
+        "concept_id_accuracy": 0.5,
+        "weak_targeting_rate": 0.0
+      }
+    }
+  },
+  "convergence": {
+    "A_strong_one_weak": {
+      "convergence_round": 5
+    },
+    "B_weak_overall": {
+      "convergence_round": 6
+    },
+    "C_mixed": {
+      "convergence_round": 5
+    },
+    "D_ceiling": {
+      "convergence_round": 11
+    },
+    "E_random_noise": {
+      "convergence_round": 6
+    }
+  },
+  "baseline_comparison": {
+    "model": "TF-IDF + LogisticRegression",
+    "train_size": 414,
+    "val_accuracy": 0.23076923076923078,
+    "val_f1_macro": 0.21407963381647593,
+    "test_accuracy": 0.35555555555555557,
+    "test_f1_macro": 0.3453216374269006
+  }
+}

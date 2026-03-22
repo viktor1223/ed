@@ -1,0 +1,30 @@
+{
+  "model": "distilbert-base-uncased",
+  "epochs": 15,
+  "train_size": 414,
+  "val_size": 91,
+  "val_accuracy": 0.9010989010989011,
+  "val_f1_macro": 0.8819776714513556,
+  "labels": [
+    "clt_add_exponents",
+    "clt_combine_unlike",
+    "clt_constant_as_variable",
+    "clt_multiply_variables",
+    "dist_drop_parens",
+    "dist_first_term_only",
+    "dist_sign_error_negative",
+    "dist_square_over_addition",
+    "leq_divide_wrong_direction",
+    "leq_move_without_sign_change",
+    "leq_reverse_operation",
+    "leq_subtract_wrong_side",
+    "oo_exponent_after_add",
+    "oo_left_to_right",
+    "oo_parentheses_ignored",
+    "sign_always_subtract_smaller",
+    "sign_neg_times_neg",
+    "sign_sub_negative",
+    "sign_sum_negatives",
+    "correct"
+  ]
+}
