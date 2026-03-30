@@ -1,0 +1,324 @@
+{
+  "metadata": {
+    "experiment": "01_simulated_rct_v1",
+    "version": "v1",
+    "n_per_condition": 500,
+    "n_interactions": 40,
+    "seed": 42,
+    "strategies": [
+      "adaptive",
+      "random",
+      "fixed_sequence",
+      "no_remediation"
+    ],
+    "framework": "Tier 2: Learning-Enabled Misconception-Aware Simulated Students",
+    "primary_metric": "internal_bkt_mastery_gain"
+  },
+  "population": {
+    "n_students": 100,
+    "avg_p_know": {
+      "integer_sign_ops": 0.483,
+      "order_of_operations": 0.456,
+      "distributive_property": 0.369,
+      "combining_like_terms": 0.329,
+      "solving_linear_equations": 0.338
+    },
+    "avg_active_misconceptions": 3.7,
+    "misconception_prevalence": {
+      "leq_reverse_operation": 0.36,
+      "clt_combine_unlike": 0.28,
+      "clt_multiply_variables": 0.27,
+      "sign_sum_negatives": 0.27,
+      "leq_divide_wrong_direction": 0.27,
+      "dist_first_term_only": 0.26,
+      "clt_constant_as_variable": 0.22,
+      "leq_move_without_sign_change": 0.22,
+      "leq_subtract_wrong_side": 0.21,
+      "clt_add_exponents": 0.19,
+      "oo_left_to_right": 0.18,
+      "dist_square_over_addition": 0.17,
+      "sign_neg_times_neg": 0.15,
+      "dist_sign_error_negative": 0.14,
+      "oo_exponent_after_add": 0.13,
+      "sign_sub_negative": 0.13,
+      "oo_parentheses_ignored": 0.09,
+      "dist_drop_parens": 0.06,
+      "sign_always_subtract_smaller": 0.06
+    }
+  },
+  "rct": {
+    "conditions": {
+      "adaptive": {
+        "n": 500,
+        "mean_mastery_gain": 0.2035797085439517,
+        "std_mastery_gain": 0.06427606555561785,
+        "median_mastery_gain": 0.19739651344523884,
+        "mean_misconceptions_resolved": 0.348,
+        "std_misconceptions_resolved": 0.5787019958493318,
+        "mean_concepts_mastered": 0.688,
+        "mean_correct": 19.758,
+        "resolution_rate": 0.12393333333333334
+      },
+      "random": {
+        "n": 500,
+        "mean_mastery_gain": 0.17880928370826812,
+        "std_mastery_gain": 0.05218703228709608,
+        "median_mastery_gain": 0.17630190548233027,
+        "mean_misconceptions_resolved": 0.0,
+        "std_misconceptions_resolved": 0.0,
+        "mean_concepts_mastered": 0.806,
+        "mean_correct": 20.676,
+        "resolution_rate": 0.0
+      },
+      "fixed_sequence": {
+        "n": 500,
+        "mean_mastery_gain": 0.18492977596001073,
+        "std_mastery_gain": 0.04820625212675843,
+        "median_mastery_gain": 0.18323446266082044,
+        "mean_misconceptions_resolved": 0.0,
+        "std_misconceptions_resolved": 0.0,
+        "mean_concepts_mastered": 0.886,
+        "mean_correct": 20.314,
+        "resolution_rate": 0.0
+      },
+      "no_remediation": {
+        "n": 500,
+        "mean_mastery_gain": 0.17580269756529596,
+        "std_mastery_gain": 0.05128649489542823,
+        "median_mastery_gain": 0.16794728105751394,
+        "mean_misconceptions_resolved": 0.002,
+        "std_misconceptions_resolved": 0.044676615807377355,
+        "mean_concepts_mastered": 0.588,
+        "mean_correct": 18.458,
+        "resolution_rate": 0.001
+      }
+    },
+    "comparisons": {
+      "adaptive_vs_random": {
+        "mastery_gain": {
+          "t_statistic": 6.683180637741658,
+          "p_value": 3.963336576326824e-11,
+          "p_adjusted_bonferroni": 1.1890009728980471e-10,
+          "cohens_d": 0.4231047731293392,
+          "ci_95_lower": 0.2987221052944856,
+          "ci_95_upper": 0.5415413110153278,
+          "significant_at_05": "True"
+        },
+        "misconception_resolution": {
+          "t_statistic": 13.433047071272918,
+          "p_value": 2.463299095205446e-35,
+          "resolution_ratio": Infinity
+        }
+      },
+      "adaptive_vs_fixed_sequence": {
+        "mastery_gain": {
+          "t_statistic": 5.185263441948322,
+          "p_value": 2.6497406491811616e-07,
+          "p_adjusted_bonferroni": 7.949221947543485e-07,
+          "cohens_d": 0.32827329248469256,
+          "ci_95_lower": 0.20679171681546185,
+          "ci_95_upper": 0.44992796017104913,
+          "significant_at_05": "True"
+        },
+        "misconception_resolution": {
+          "t_statistic": 13.433047071272918,
+          "p_value": 2.463299095205446e-35,
+          "resolution_ratio": Infinity
+        }
+      },
+      "adaptive_vs_no_remediation": {
+        "mastery_gain": {
+          "t_statistic": 7.545834625931988,
+          "p_value": 1.049827915707921e-13,
+          "p_adjusted_bonferroni": 3.149483747123763e-13,
+          "cohens_d": 0.4777184428394139,
+          "ci_95_lower": 0.3484724490278151,
+          "ci_95_upper": 0.6075702829610199,
+          "significant_at_05": "True"
+        },
+        "misconception_resolution": {
+          "t_statistic": 13.316221868029357,
+          "p_value": 6.911153157424385e-35,
+          "resolution_ratio": 173.99999999999997
+        }
+      }
+    },
+    "effect_sizes": {
+      "adaptive_vs_random": 0.4231047731293392,
+      "adaptive_vs_fixed_sequence": 0.32827329248469256,
+      "adaptive_vs_no_remediation": 0.4777184428394139
+    }
+  },
+  "sensitivity": {
+    "0.5": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.4797943303380459,
+        "adaptive_vs_fixed_sequence": 0.4534124042711993,
+        "adaptive_vs_no_remediation": 0.4663597031070102
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.11546941028172147,
+          "resolution_rate": 0.17850000000000002
+        },
+        "random": {
+          "mean_mastery_gain": 0.09799650008542099,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.09928544956010388,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.09864646170838483,
+          "resolution_rate": 0.005
+        }
+      }
+    },
+    "0.8": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.44109125469829424,
+        "adaptive_vs_fixed_sequence": 0.3399781592923448,
+        "adaptive_vs_no_remediation": 0.4707533002496439
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.1676477026403157,
+          "resolution_rate": 0.13541666666666669
+        },
+        "random": {
+          "mean_mastery_gain": 0.14646786868163034,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.15161981419178713,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.14545638648778633,
+          "resolution_rate": 0.0
+        }
+      }
+    },
+    "1.0": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.4141016713982569,
+        "adaptive_vs_fixed_sequence": 0.3091798253838936,
+        "adaptive_vs_no_remediation": 0.5428664830599491
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.20129591684945766,
+          "resolution_rate": 0.13133333333333333
+        },
+        "random": {
+          "mean_mastery_gain": 0.17819191295281847,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.18442865912460157,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.17167971113696967,
+          "resolution_rate": 0.0
+        }
+      }
+    },
+    "1.2": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.3994996274440575,
+        "adaptive_vs_fixed_sequence": 0.3147586537936669,
+        "adaptive_vs_no_remediation": 0.46814243990220383
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.23564835443011894,
+          "resolution_rate": 0.09191666666666666
+        },
+        "random": {
+          "mean_mastery_gain": 0.20958923927560952,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.21610045858841226,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.20606707968422516,
+          "resolution_rate": 0.0
+        }
+      }
+    },
+    "1.5": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.4338733327692171,
+        "adaptive_vs_fixed_sequence": 0.23075924873239836,
+        "adaptive_vs_no_remediation": 0.476057609994791
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.2873215628605131,
+          "resolution_rate": 0.09891666666666665
+        },
+        "random": {
+          "mean_mastery_gain": 0.2547733417612504,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.27055701890581235,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.252167581317262,
+          "resolution_rate": 0.0
+        }
+      }
+    },
+    "2.0": {
+      "effect_sizes": {
+        "adaptive_vs_random": 0.5400447558497882,
+        "adaptive_vs_fixed_sequence": 0.15873823278504057,
+        "adaptive_vs_no_remediation": 0.4343388439376006
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_mastery_gain": 0.37043582741679687,
+          "resolution_rate": 0.08308333333333334
+        },
+        "random": {
+          "mean_mastery_gain": 0.31888238381917805,
+          "resolution_rate": 0.0
+        },
+        "fixed_sequence": {
+          "mean_mastery_gain": 0.35579117693511264,
+          "resolution_rate": 0.0
+        },
+        "no_remediation": {
+          "mean_mastery_gain": 0.3278404470254264,
+          "resolution_rate": 0.0
+        }
+      }
+    },
+    "robust": true
+  },
+  "interpretation": {
+    "summary": [
+      "Adaptive condition: mean mastery gain = 0.2036",
+      "Misconception resolution rate: 12.4%",
+      "Largest effect size: d = 0.478 (adaptive_vs_no_remediation)",
+      "This is a small-to-medium effect, typical of answer-based tutoring systems (VanLehn 2011: d=0.31)",
+      "Adaptive resolves misconceptions infx faster than random",
+      "Results are ROBUST: adaptive outperforms all baselines across +/- BKT parameter variation",
+      "",
+      "IMPORTANT: These are simulated results that validate system behavior,",
+      "NOT evidence of real student learning outcomes.",
+      "A human RCT (n>=100 per group) is required for effect size claims.",
+      "Recommended benchmark: d = 0.5-0.8 on aligned assessments (Kulik & Fletcher 2016)"
+    ],
+    "bloom_2sigma_achievable": false,
+    "realistic_target": "d = 0.5-0.8 on aligned assessments",
+    "evidence_level": "Stage 2: Simulated evaluation (system validation)",
+    "next_step": "Stage 3: Wizard-of-Oz pilot with 5-10 real students"
+  }
+}

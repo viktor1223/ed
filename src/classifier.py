@@ -44,6 +44,7 @@ class MisconceptionClassifier:
             return_tensors="pt",
         )
         enc = {k: v.to(self.device) for k, v in enc.items()}
+        enc.pop("token_type_ids", None)  # DistilBERT doesn't use token type IDs
 
         with torch.no_grad():
             outputs = self.model(**enc)

@@ -1,0 +1,750 @@
+{
+  "metadata": {
+    "experiment": "09_end_to_end_stress",
+    "n_students": 200,
+    "n_interactions": 40,
+    "seed": 42,
+    "classifier_error_rates": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "bkt_scales": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "concept_noise_rates": [
+      0.0,
+      0.15,
+      0.3,
+      0.5
+    ],
+    "total_conditions": 80
+  },
+  "results": [
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.1915,
+      "std_gain": 0.209,
+      "mastery_rate": 0.891,
+      "efficiency": 0.004788
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.178,
+      "std_gain": 0.1942,
+      "mastery_rate": 0.854,
+      "efficiency": 0.00445
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.211,
+      "std_gain": 0.2017,
+      "mastery_rate": 0.827,
+      "efficiency": 0.005275
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.1835,
+      "std_gain": 0.2184,
+      "mastery_rate": 0.775,
+      "efficiency": 0.004588
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.0,
+      "mean_gain": 0.182,
+      "std_gain": 0.1969,
+      "mastery_rate": 0.913,
+      "efficiency": 0.00455
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.15,
+      "mean_gain": 0.1905,
+      "std_gain": 0.1959,
+      "mastery_rate": 0.881,
+      "efficiency": 0.004762
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.3,
+      "mean_gain": 0.1905,
+      "std_gain": 0.1969,
+      "mastery_rate": 0.846,
+      "efficiency": 0.004763
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.5,
+      "mean_gain": 0.21,
+      "std_gain": 0.199,
+      "mastery_rate": 0.79,
+      "efficiency": 0.00525
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.199,
+      "std_gain": 0.1929,
+      "mastery_rate": 0.937,
+      "efficiency": 0.004975
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.196,
+      "std_gain": 0.2073,
+      "mastery_rate": 0.91,
+      "efficiency": 0.0049
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.1955,
+      "std_gain": 0.2065,
+      "mastery_rate": 0.863,
+      "efficiency": 0.004888
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.1985,
+      "std_gain": 0.1853,
+      "mastery_rate": 0.821,
+      "efficiency": 0.004962
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.1925,
+      "std_gain": 0.2002,
+      "mastery_rate": 0.963,
+      "efficiency": 0.004812
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.1735,
+      "std_gain": 0.2151,
+      "mastery_rate": 0.951,
+      "efficiency": 0.004338
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.208,
+      "std_gain": 0.2053,
+      "mastery_rate": 0.934,
+      "efficiency": 0.0052
+    },
+    {
+      "classifier_error": 0.0,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.1685,
+      "std_gain": 0.2063,
+      "mastery_rate": 0.89,
+      "efficiency": 0.004213
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2,
+      "std_gain": 0.1936,
+      "mastery_rate": 0.9,
+      "efficiency": 0.005
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2285,
+      "std_gain": 0.206,
+      "mastery_rate": 0.865,
+      "efficiency": 0.005713
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2125,
+      "std_gain": 0.1997,
+      "mastery_rate": 0.817,
+      "efficiency": 0.005312
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.206,
+      "std_gain": 0.2046,
+      "mastery_rate": 0.794,
+      "efficiency": 0.00515
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2135,
+      "std_gain": 0.1941,
+      "mastery_rate": 0.909,
+      "efficiency": 0.005338
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.15,
+      "mean_gain": 0.208,
+      "std_gain": 0.1919,
+      "mastery_rate": 0.89,
+      "efficiency": 0.0052
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2235,
+      "std_gain": 0.2,
+      "mastery_rate": 0.848,
+      "efficiency": 0.005588
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.5,
+      "mean_gain": 0.227,
+      "std_gain": 0.2044,
+      "mastery_rate": 0.814,
+      "efficiency": 0.005675
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.1855,
+      "std_gain": 0.2089,
+      "mastery_rate": 0.931,
+      "efficiency": 0.004637
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.21,
+      "std_gain": 0.1982,
+      "mastery_rate": 0.906,
+      "efficiency": 0.00525
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.195,
+      "std_gain": 0.2049,
+      "mastery_rate": 0.883,
+      "efficiency": 0.004875
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2245,
+      "std_gain": 0.2104,
+      "mastery_rate": 0.857,
+      "efficiency": 0.005613
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.175,
+      "std_gain": 0.2022,
+      "mastery_rate": 0.965,
+      "efficiency": 0.004375
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.197,
+      "std_gain": 0.1857,
+      "mastery_rate": 0.952,
+      "efficiency": 0.004925
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.212,
+      "std_gain": 0.2011,
+      "mastery_rate": 0.948,
+      "efficiency": 0.0053
+    },
+    {
+      "classifier_error": 0.1,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.221,
+      "std_gain": 0.1864,
+      "mastery_rate": 0.914,
+      "efficiency": 0.005525
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.232,
+      "std_gain": 0.1891,
+      "mastery_rate": 0.901,
+      "efficiency": 0.0058
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.221,
+      "std_gain": 0.2048,
+      "mastery_rate": 0.866,
+      "efficiency": 0.005525
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2405,
+      "std_gain": 0.2032,
+      "mastery_rate": 0.842,
+      "efficiency": 0.006013
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2365,
+      "std_gain": 0.2013,
+      "mastery_rate": 0.801,
+      "efficiency": 0.005912
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.0,
+      "mean_gain": 0.198,
+      "std_gain": 0.2112,
+      "mastery_rate": 0.903,
+      "efficiency": 0.00495
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2155,
+      "std_gain": 0.2189,
+      "mastery_rate": 0.881,
+      "efficiency": 0.005387
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2195,
+      "std_gain": 0.1915,
+      "mastery_rate": 0.852,
+      "efficiency": 0.005488
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2315,
+      "std_gain": 0.2034,
+      "mastery_rate": 0.83,
+      "efficiency": 0.005787
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.1815,
+      "std_gain": 0.1934,
+      "mastery_rate": 0.94,
+      "efficiency": 0.004538
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.209,
+      "std_gain": 0.2084,
+      "mastery_rate": 0.915,
+      "efficiency": 0.005225
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.208,
+      "std_gain": 0.206,
+      "mastery_rate": 0.875,
+      "efficiency": 0.0052
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.222,
+      "std_gain": 0.2045,
+      "mastery_rate": 0.834,
+      "efficiency": 0.00555
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2045,
+      "std_gain": 0.2057,
+      "mastery_rate": 0.965,
+      "efficiency": 0.005113
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.231,
+      "std_gain": 0.2065,
+      "mastery_rate": 0.952,
+      "efficiency": 0.005775
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.229,
+      "std_gain": 0.1912,
+      "mastery_rate": 0.942,
+      "efficiency": 0.005725
+    },
+    {
+      "classifier_error": 0.2,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2245,
+      "std_gain": 0.2048,
+      "mastery_rate": 0.917,
+      "efficiency": 0.005613
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.239,
+      "std_gain": 0.1987,
+      "mastery_rate": 0.923,
+      "efficiency": 0.005975
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2105,
+      "std_gain": 0.2055,
+      "mastery_rate": 0.866,
+      "efficiency": 0.005263
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2425,
+      "std_gain": 0.2178,
+      "mastery_rate": 0.861,
+      "efficiency": 0.006063
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.23,
+      "std_gain": 0.1936,
+      "mastery_rate": 0.807,
+      "efficiency": 0.00575
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2115,
+      "std_gain": 0.189,
+      "mastery_rate": 0.919,
+      "efficiency": 0.005287
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2325,
+      "std_gain": 0.2081,
+      "mastery_rate": 0.906,
+      "efficiency": 0.005812
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.3,
+      "mean_gain": 0.247,
+      "std_gain": 0.2083,
+      "mastery_rate": 0.875,
+      "efficiency": 0.006175
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2495,
+      "std_gain": 0.1806,
+      "mastery_rate": 0.816,
+      "efficiency": 0.006237
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.219,
+      "std_gain": 0.2055,
+      "mastery_rate": 0.927,
+      "efficiency": 0.005475
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.229,
+      "std_gain": 0.2139,
+      "mastery_rate": 0.918,
+      "efficiency": 0.005725
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.242,
+      "std_gain": 0.1812,
+      "mastery_rate": 0.898,
+      "efficiency": 0.00605
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.253,
+      "std_gain": 0.203,
+      "mastery_rate": 0.836,
+      "efficiency": 0.006325
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2355,
+      "std_gain": 0.2039,
+      "mastery_rate": 0.973,
+      "efficiency": 0.005888
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.222,
+      "std_gain": 0.1877,
+      "mastery_rate": 0.961,
+      "efficiency": 0.00555
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.242,
+      "std_gain": 0.2077,
+      "mastery_rate": 0.956,
+      "efficiency": 0.00605
+    },
+    {
+      "classifier_error": 0.3,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2315,
+      "std_gain": 0.213,
+      "mastery_rate": 0.915,
+      "efficiency": 0.005788
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2625,
+      "std_gain": 0.1935,
+      "mastery_rate": 0.917,
+      "efficiency": 0.006563
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.264,
+      "std_gain": 0.1703,
+      "mastery_rate": 0.879,
+      "efficiency": 0.0066
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.245,
+      "std_gain": 0.1873,
+      "mastery_rate": 0.839,
+      "efficiency": 0.006125
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.253,
+      "std_gain": 0.1972,
+      "mastery_rate": 0.812,
+      "efficiency": 0.006325
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.0,
+      "mean_gain": 0.2325,
+      "std_gain": 0.1965,
+      "mastery_rate": 0.925,
+      "efficiency": 0.005812
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2105,
+      "std_gain": 0.1963,
+      "mastery_rate": 0.91,
+      "efficiency": 0.005262
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2445,
+      "std_gain": 0.2009,
+      "mastery_rate": 0.878,
+      "efficiency": 0.006113
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 1.5,
+      "concept_noise": 0.5,
+      "mean_gain": 0.2495,
+      "std_gain": 0.204,
+      "mastery_rate": 0.845,
+      "efficiency": 0.006237
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.258,
+      "std_gain": 0.1971,
+      "mastery_rate": 0.945,
+      "efficiency": 0.00645
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.2535,
+      "std_gain": 0.1892,
+      "mastery_rate": 0.926,
+      "efficiency": 0.006338
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.2095,
+      "std_gain": 0.1864,
+      "mastery_rate": 0.896,
+      "efficiency": 0.005237
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 2.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.247,
+      "std_gain": 0.1894,
+      "mastery_rate": 0.865,
+      "efficiency": 0.006175
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.0,
+      "mean_gain": 0.216,
+      "std_gain": 0.1971,
+      "mastery_rate": 0.974,
+      "efficiency": 0.0054
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.15,
+      "mean_gain": 0.247,
+      "std_gain": 0.2156,
+      "mastery_rate": 0.962,
+      "efficiency": 0.006175
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.3,
+      "mean_gain": 0.252,
+      "std_gain": 0.1947,
+      "mastery_rate": 0.957,
+      "efficiency": 0.0063
+    },
+    {
+      "classifier_error": 0.4,
+      "bkt_scale": 3.0,
+      "concept_noise": 0.5,
+      "mean_gain": 0.265,
+      "std_gain": 0.1938,
+      "mastery_rate": 0.912,
+      "efficiency": 0.006625
+    }
+  ]
+}

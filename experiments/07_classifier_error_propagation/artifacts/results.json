@@ -1,0 +1,419 @@
+{
+  "metadata": {
+    "experiment": "07_classifier_error_propagation",
+    "n_students": 300,
+    "n_interactions": 40,
+    "error_rates_swept": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "seed": 42
+  },
+  "sweeps": {
+    "misidentification": [
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_error": 0.2902,
+        "mean_resolution_rate": 0.3809,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.05,
+        "mean_gain": 0.1987,
+        "std_gain": 0.2007,
+        "mean_bkt_error": 0.2867,
+        "mean_resolution_rate": 0.3664,
+        "mean_wasted_fraction": 0.0082,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.1,
+        "mean_gain": 0.2013,
+        "std_gain": 0.2051,
+        "mean_bkt_error": 0.289,
+        "mean_resolution_rate": 0.3332,
+        "mean_wasted_fraction": 0.0161,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.15,
+        "mean_gain": 0.1937,
+        "std_gain": 0.2023,
+        "mean_bkt_error": 0.2903,
+        "mean_resolution_rate": 0.3237,
+        "mean_wasted_fraction": 0.0258,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.2,
+        "mean_gain": 0.1837,
+        "std_gain": 0.2152,
+        "mean_bkt_error": 0.287,
+        "mean_resolution_rate": 0.3509,
+        "mean_wasted_fraction": 0.0318,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.25,
+        "mean_gain": 0.1973,
+        "std_gain": 0.1863,
+        "mean_bkt_error": 0.2866,
+        "mean_resolution_rate": 0.3116,
+        "mean_wasted_fraction": 0.0449,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.3,
+        "mean_gain": 0.186,
+        "std_gain": 0.2098,
+        "mean_bkt_error": 0.2856,
+        "mean_resolution_rate": 0.3046,
+        "mean_wasted_fraction": 0.0532,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.4,
+        "mean_gain": 0.1883,
+        "std_gain": 0.1928,
+        "mean_bkt_error": 0.2882,
+        "mean_resolution_rate": 0.2827,
+        "mean_wasted_fraction": 0.0732,
+        "n_students": 300
+      },
+      {
+        "error_type": "misidentification",
+        "error_rate": 0.5,
+        "mean_gain": 0.172,
+        "std_gain": 0.203,
+        "mean_bkt_error": 0.29,
+        "mean_resolution_rate": 0.2739,
+        "mean_wasted_fraction": 0.0953,
+        "n_students": 300
+      }
+    ],
+    "false_negative": [
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_error": 0.2902,
+        "mean_resolution_rate": 0.3809,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.05,
+        "mean_gain": 0.1957,
+        "std_gain": 0.1963,
+        "mean_bkt_error": 0.2915,
+        "mean_resolution_rate": 0.3614,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.1,
+        "mean_gain": 0.1793,
+        "std_gain": 0.2023,
+        "mean_bkt_error": 0.2899,
+        "mean_resolution_rate": 0.3491,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.15,
+        "mean_gain": 0.176,
+        "std_gain": 0.2077,
+        "mean_bkt_error": 0.2861,
+        "mean_resolution_rate": 0.3539,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.2,
+        "mean_gain": 0.181,
+        "std_gain": 0.2146,
+        "mean_bkt_error": 0.2887,
+        "mean_resolution_rate": 0.3263,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.25,
+        "mean_gain": 0.1683,
+        "std_gain": 0.1987,
+        "mean_bkt_error": 0.2858,
+        "mean_resolution_rate": 0.3276,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.3,
+        "mean_gain": 0.1647,
+        "std_gain": 0.2226,
+        "mean_bkt_error": 0.2849,
+        "mean_resolution_rate": 0.2866,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.4,
+        "mean_gain": 0.194,
+        "std_gain": 0.2045,
+        "mean_bkt_error": 0.2918,
+        "mean_resolution_rate": 0.2243,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_negative",
+        "error_rate": 0.5,
+        "mean_gain": 0.1857,
+        "std_gain": 0.2006,
+        "mean_bkt_error": 0.2885,
+        "mean_resolution_rate": 0.2005,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      }
+    ],
+    "false_positive": [
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_error": 0.2902,
+        "mean_resolution_rate": 0.3809,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.05,
+        "mean_gain": 0.2047,
+        "std_gain": 0.1935,
+        "mean_bkt_error": 0.2847,
+        "mean_resolution_rate": 0.4037,
+        "mean_wasted_fraction": 0.0267,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.1,
+        "mean_gain": 0.2107,
+        "std_gain": 0.2103,
+        "mean_bkt_error": 0.2794,
+        "mean_resolution_rate": 0.3949,
+        "mean_wasted_fraction": 0.052,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.15,
+        "mean_gain": 0.2203,
+        "std_gain": 0.2185,
+        "mean_bkt_error": 0.267,
+        "mean_resolution_rate": 0.4025,
+        "mean_wasted_fraction": 0.0807,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.2,
+        "mean_gain": 0.2213,
+        "std_gain": 0.1934,
+        "mean_bkt_error": 0.2638,
+        "mean_resolution_rate": 0.3928,
+        "mean_wasted_fraction": 0.1086,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.25,
+        "mean_gain": 0.2283,
+        "std_gain": 0.1976,
+        "mean_bkt_error": 0.2596,
+        "mean_resolution_rate": 0.4083,
+        "mean_wasted_fraction": 0.1343,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.3,
+        "mean_gain": 0.2103,
+        "std_gain": 0.2109,
+        "mean_bkt_error": 0.2577,
+        "mean_resolution_rate": 0.4139,
+        "mean_wasted_fraction": 0.1707,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.4,
+        "mean_gain": 0.2137,
+        "std_gain": 0.2122,
+        "mean_bkt_error": 0.2568,
+        "mean_resolution_rate": 0.39,
+        "mean_wasted_fraction": 0.2303,
+        "n_students": 300
+      },
+      {
+        "error_type": "false_positive",
+        "error_rate": 0.5,
+        "mean_gain": 0.2553,
+        "std_gain": 0.1995,
+        "mean_bkt_error": 0.2631,
+        "mean_resolution_rate": 0.3789,
+        "mean_wasted_fraction": 0.3216,
+        "n_students": 300
+      }
+    ],
+    "concept_misroute": [
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_error": 0.2902,
+        "mean_resolution_rate": 0.3809,
+        "mean_wasted_fraction": 0.0,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.05,
+        "mean_gain": 0.1873,
+        "std_gain": 0.2049,
+        "mean_bkt_error": 0.2887,
+        "mean_resolution_rate": 0.3644,
+        "mean_wasted_fraction": 0.0083,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.1,
+        "mean_gain": 0.174,
+        "std_gain": 0.2204,
+        "mean_bkt_error": 0.2905,
+        "mean_resolution_rate": 0.326,
+        "mean_wasted_fraction": 0.0185,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.15,
+        "mean_gain": 0.1947,
+        "std_gain": 0.2097,
+        "mean_bkt_error": 0.289,
+        "mean_resolution_rate": 0.3255,
+        "mean_wasted_fraction": 0.0291,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.2,
+        "mean_gain": 0.1813,
+        "std_gain": 0.1968,
+        "mean_bkt_error": 0.2896,
+        "mean_resolution_rate": 0.3042,
+        "mean_wasted_fraction": 0.0352,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.25,
+        "mean_gain": 0.1923,
+        "std_gain": 0.2084,
+        "mean_bkt_error": 0.2862,
+        "mean_resolution_rate": 0.2792,
+        "mean_wasted_fraction": 0.046,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.3,
+        "mean_gain": 0.1907,
+        "std_gain": 0.2026,
+        "mean_bkt_error": 0.2881,
+        "mean_resolution_rate": 0.2569,
+        "mean_wasted_fraction": 0.0542,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.4,
+        "mean_gain": 0.1983,
+        "std_gain": 0.1997,
+        "mean_bkt_error": 0.2915,
+        "mean_resolution_rate": 0.2269,
+        "mean_wasted_fraction": 0.0757,
+        "n_students": 300
+      },
+      {
+        "error_type": "concept_misroute",
+        "error_rate": 0.5,
+        "mean_gain": 0.165,
+        "std_gain": 0.2013,
+        "mean_bkt_error": 0.2906,
+        "mean_resolution_rate": 0.17,
+        "mean_wasted_fraction": 0.1021,
+        "n_students": 300
+      }
+    ]
+  },
+  "thresholds": {
+    "misidentification": {
+      "baseline_gain": 0.189,
+      "threshold_80pct": null,
+      "threshold_50pct": null,
+      "implied_min_accuracy_80pct": "> 0.50",
+      "implied_min_accuracy_50pct": "> 0.50"
+    },
+    "false_negative": {
+      "baseline_gain": 0.189,
+      "threshold_80pct": null,
+      "threshold_50pct": null,
+      "implied_min_accuracy_80pct": "> 0.50",
+      "implied_min_accuracy_50pct": "> 0.50"
+    },
+    "false_positive": {
+      "baseline_gain": 0.189,
+      "threshold_80pct": null,
+      "threshold_50pct": null,
+      "implied_min_accuracy_80pct": "> 0.50",
+      "implied_min_accuracy_50pct": "> 0.50"
+    },
+    "concept_misroute": {
+      "baseline_gain": 0.189,
+      "threshold_80pct": null,
+      "threshold_50pct": null,
+      "implied_min_accuracy_80pct": "> 0.50",
+      "implied_min_accuracy_50pct": "> 0.50"
+    }
+  }
+}

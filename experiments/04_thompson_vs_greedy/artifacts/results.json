@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "experiment": "04_thompson_vs_greedy",
+    "main_n_students": 1000,
+    "main_n_interactions": 50,
+    "main_n_modalities": 5,
+    "seed": 42
+  },
+  "main_results": {
+    "thompson": {
+      "mean_resolution_rate": 0.3442,
+      "std_resolution_rate": 0.0967,
+      "mean_regret": 0.1184,
+      "median_convergence": 4
+    },
+    "greedy": {
+      "mean_resolution_rate": 0.3637,
+      "std_resolution_rate": 0.1358,
+      "mean_regret": 0.1003,
+      "median_convergence": 3
+    },
+    "uniform": {
+      "mean_resolution_rate": 0.2938,
+      "std_resolution_rate": 0.0605,
+      "mean_regret": 0.1767,
+      "median_convergence": 5
+    }
+  },
+  "scalability": [
+    {
+      "n_modalities": 3,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.4859,
+      "mean_regret": 0.09,
+      "median_convergence": 1
+    },
+    {
+      "n_modalities": 3,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.4909,
+      "mean_regret": 0.0839,
+      "median_convergence": 1
+    },
+    {
+      "n_modalities": 3,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.3856,
+      "mean_regret": 0.196,
+      "median_convergence": 1
+    },
+    {
+      "n_modalities": 4,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.4105,
+      "mean_regret": 0.108,
+      "median_convergence": 2
+    },
+    {
+      "n_modalities": 4,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.4144,
+      "mean_regret": 0.1054,
+      "median_convergence": 2
+    },
+    {
+      "n_modalities": 4,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.3246,
+      "mean_regret": 0.1956,
+      "median_convergence": 2
+    },
+    {
+      "n_modalities": 5,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.3444,
+      "mean_regret": 0.1246,
+      "median_convergence": 3
+    },
+    {
+      "n_modalities": 5,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.3644,
+      "mean_regret": 0.1045,
+      "median_convergence": 3
+    },
+    {
+      "n_modalities": 5,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.2943,
+      "mean_regret": 0.1812,
+      "median_convergence": 5
+    },
+    {
+      "n_modalities": 6,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.3022,
+      "mean_regret": 0.1314,
+      "median_convergence": 5
+    },
+    {
+      "n_modalities": 6,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.3201,
+      "mean_regret": 0.1079,
+      "median_convergence": 5
+    },
+    {
+      "n_modalities": 6,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.2692,
+      "mean_regret": 0.1688,
+      "median_convergence": 8
+    },
+    {
+      "n_modalities": 8,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.2607,
+      "mean_regret": 0.1298,
+      "median_convergence": 10
+    },
+    {
+      "n_modalities": 8,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.2756,
+      "mean_regret": 0.1108,
+      "median_convergence": 10
+    },
+    {
+      "n_modalities": 8,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.2397,
+      "mean_regret": 0.1553,
+      "median_convergence": 19
+    },
+    {
+      "n_modalities": 10,
+      "policy": "thompson",
+      "mean_resolution_rate": 0.2307,
+      "mean_regret": 0.1281,
+      "median_convergence": 20
+    },
+    {
+      "n_modalities": 10,
+      "policy": "greedy",
+      "mean_resolution_rate": 0.25,
+      "mean_regret": 0.1057,
+      "median_convergence": 50
+    },
+    {
+      "n_modalities": 10,
+      "policy": "uniform",
+      "mean_resolution_rate": 0.2226,
+      "mean_regret": 0.1381,
+      "median_convergence": 35
+    }
+  ]
+}

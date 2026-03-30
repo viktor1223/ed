@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "experiment": "08_bkt_estimation_fidelity",
+    "n_students": 300,
+    "n_interactions": 40,
+    "seed": 42
+  },
+  "tracking": {
+    "concept_selection_accuracy": 0.2644,
+    "per_concept_rmse": {
+      "integer_sign_ops": 0.239,
+      "order_of_operations": 0.3608,
+      "distributive_property": 0.4149,
+      "combining_like_terms": 0.3686,
+      "solving_linear_equations": 0.3609
+    },
+    "initial_rmse": 0.3765428573377117,
+    "final_rmse": 0.3581867162471976
+  },
+  "parameter_sensitivity": {
+    "p_learn": [
+      {
+        "param": "p_learn",
+        "scale": 0.25,
+        "mean_gain": 0.1927,
+        "std_gain": 0.1903,
+        "mean_bkt_rmse": 0.2979,
+        "concept_selection_accuracy": 0.2254
+      },
+      {
+        "param": "p_learn",
+        "scale": 0.5,
+        "mean_gain": 0.1827,
+        "std_gain": 0.1947,
+        "mean_bkt_rmse": 0.3274,
+        "concept_selection_accuracy": 0.2495
+      },
+      {
+        "param": "p_learn",
+        "scale": 0.75,
+        "mean_gain": 0.191,
+        "std_gain": 0.1853,
+        "mean_bkt_rmse": 0.3472,
+        "concept_selection_accuracy": 0.2579
+      },
+      {
+        "param": "p_learn",
+        "scale": 1.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_rmse": 0.3569,
+        "concept_selection_accuracy": 0.2532
+      },
+      {
+        "param": "p_learn",
+        "scale": 1.25,
+        "mean_gain": 0.2123,
+        "std_gain": 0.2012,
+        "mean_bkt_rmse": 0.3603,
+        "concept_selection_accuracy": 0.2578
+      },
+      {
+        "param": "p_learn",
+        "scale": 1.5,
+        "mean_gain": 0.204,
+        "std_gain": 0.1916,
+        "mean_bkt_rmse": 0.3751,
+        "concept_selection_accuracy": 0.2555
+      },
+      {
+        "param": "p_learn",
+        "scale": 2.0,
+        "mean_gain": 0.204,
+        "std_gain": 0.2042,
+        "mean_bkt_rmse": 0.3809,
+        "concept_selection_accuracy": 0.2593
+      },
+      {
+        "param": "p_learn",
+        "scale": 3.0,
+        "mean_gain": 0.1673,
+        "std_gain": 0.1937,
+        "mean_bkt_rmse": 0.3927,
+        "concept_selection_accuracy": 0.2591
+      }
+    ],
+    "p_guess": [
+      {
+        "param": "p_guess",
+        "scale": 0.25,
+        "mean_gain": 0.1813,
+        "std_gain": 0.206,
+        "mean_bkt_rmse": 0.3857,
+        "concept_selection_accuracy": 0.2728
+      },
+      {
+        "param": "p_guess",
+        "scale": 0.5,
+        "mean_gain": 0.1827,
+        "std_gain": 0.2125,
+        "mean_bkt_rmse": 0.378,
+        "concept_selection_accuracy": 0.2537
+      },
+      {
+        "param": "p_guess",
+        "scale": 0.75,
+        "mean_gain": 0.221,
+        "std_gain": 0.2088,
+        "mean_bkt_rmse": 0.3625,
+        "concept_selection_accuracy": 0.2664
+      },
+      {
+        "param": "p_guess",
+        "scale": 1.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_rmse": 0.3569,
+        "concept_selection_accuracy": 0.2532
+      },
+      {
+        "param": "p_guess",
+        "scale": 1.25,
+        "mean_gain": 0.153,
+        "std_gain": 0.1979,
+        "mean_bkt_rmse": 0.3465,
+        "concept_selection_accuracy": 0.2535
+      },
+      {
+        "param": "p_guess",
+        "scale": 1.5,
+        "mean_gain": 0.186,
+        "std_gain": 0.1941,
+        "mean_bkt_rmse": 0.3407,
+        "concept_selection_accuracy": 0.2455
+      },
+      {
+        "param": "p_guess",
+        "scale": 2.0,
+        "mean_gain": 0.1813,
+        "std_gain": 0.2231,
+        "mean_bkt_rmse": 0.3102,
+        "concept_selection_accuracy": 0.2377
+      },
+      {
+        "param": "p_guess",
+        "scale": 3.0,
+        "mean_gain": 0.2143,
+        "std_gain": 0.1965,
+        "mean_bkt_rmse": 0.2775,
+        "concept_selection_accuracy": 0.2169
+      }
+    ],
+    "p_slip": [
+      {
+        "param": "p_slip",
+        "scale": 0.25,
+        "mean_gain": 0.1887,
+        "std_gain": 0.2128,
+        "mean_bkt_rmse": 0.3473,
+        "concept_selection_accuracy": 0.2543
+      },
+      {
+        "param": "p_slip",
+        "scale": 0.5,
+        "mean_gain": 0.1957,
+        "std_gain": 0.213,
+        "mean_bkt_rmse": 0.352,
+        "concept_selection_accuracy": 0.2502
+      },
+      {
+        "param": "p_slip",
+        "scale": 0.75,
+        "mean_gain": 0.211,
+        "std_gain": 0.2196,
+        "mean_bkt_rmse": 0.3526,
+        "concept_selection_accuracy": 0.2509
+      },
+      {
+        "param": "p_slip",
+        "scale": 1.0,
+        "mean_gain": 0.189,
+        "std_gain": 0.1959,
+        "mean_bkt_rmse": 0.3569,
+        "concept_selection_accuracy": 0.2532
+      },
+      {
+        "param": "p_slip",
+        "scale": 1.25,
+        "mean_gain": 0.206,
+        "std_gain": 0.1935,
+        "mean_bkt_rmse": 0.3577,
+        "concept_selection_accuracy": 0.256
+      },
+      {
+        "param": "p_slip",
+        "scale": 1.5,
+        "mean_gain": 0.1643,
+        "std_gain": 0.2097,
+        "mean_bkt_rmse": 0.3546,
+        "concept_selection_accuracy": 0.268
+      },
+      {
+        "param": "p_slip",
+        "scale": 2.0,
+        "mean_gain": 0.2,
+        "std_gain": 0.1963,
+        "mean_bkt_rmse": 0.3567,
+        "concept_selection_accuracy": 0.265
+      },
+      {
+        "param": "p_slip",
+        "scale": 3.0,
+        "mean_gain": 0.208,
+        "std_gain": 0.1917,
+        "mean_bkt_rmse": 0.3617,
+        "concept_selection_accuracy": 0.261
+      }
+    ]
+  },
+  "joint_perturbation": [
+    {
+      "joint_scale": 0.25,
+      "mean_gain": 0.1943,
+      "std_gain": 0.2054
+    },
+    {
+      "joint_scale": 0.5,
+      "mean_gain": 0.1867,
+      "std_gain": 0.1986
+    },
+    {
+      "joint_scale": 0.75,
+      "mean_gain": 0.189,
+      "std_gain": 0.216
+    },
+    {
+      "joint_scale": 1.0,
+      "mean_gain": 0.189,
+      "std_gain": 0.1959
+    },
+    {
+      "joint_scale": 1.25,
+      "mean_gain": 0.193,
+      "std_gain": 0.2031
+    },
+    {
+      "joint_scale": 1.5,
+      "mean_gain": 0.188,
+      "std_gain": 0.2113
+    },
+    {
+      "joint_scale": 2.0,
+      "mean_gain": 0.1933,
+      "std_gain": 0.1969
+    },
+    {
+      "joint_scale": 3.0,
+      "mean_gain": 0.177,
+      "std_gain": 0.1981
+    }
+  ]
+}

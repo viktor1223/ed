@@ -1,0 +1,559 @@
+{
+  "metadata": {
+    "experiment": "02_simulated_rct_v2",
+    "version": "v2",
+    "n_per_condition": 500,
+    "n_interactions": 40,
+    "seed": 42,
+    "strategies": [
+      "adaptive",
+      "random",
+      "fixed_sequence",
+      "no_remediation"
+    ],
+    "framework": "Tier 2: Decoupled Assessment with Held-Out Test Set",
+    "primary_metric": "held_out_test_score_gain",
+    "targeted_resolution": 0.5,
+    "max_consecutive_same_concept": 6
+  },
+  "population": {
+    "n_students": 100,
+    "avg_p_know": {
+      "integer_sign_ops": 0.483,
+      "order_of_operations": 0.456,
+      "distributive_property": 0.369,
+      "combining_like_terms": 0.329,
+      "solving_linear_equations": 0.338
+    },
+    "avg_active_misconceptions": 3.7,
+    "misconception_prevalence": {
+      "leq_reverse_operation": 0.36,
+      "clt_combine_unlike": 0.28,
+      "clt_multiply_variables": 0.27,
+      "sign_sum_negatives": 0.27,
+      "leq_divide_wrong_direction": 0.27,
+      "dist_first_term_only": 0.26,
+      "clt_constant_as_variable": 0.22,
+      "leq_move_without_sign_change": 0.22,
+      "leq_subtract_wrong_side": 0.21,
+      "clt_add_exponents": 0.19,
+      "oo_left_to_right": 0.18,
+      "dist_square_over_addition": 0.17,
+      "sign_neg_times_neg": 0.15,
+      "dist_sign_error_negative": 0.14,
+      "oo_exponent_after_add": 0.13,
+      "sign_sub_negative": 0.13,
+      "oo_parentheses_ignored": 0.09,
+      "dist_drop_parens": 0.06,
+      "sign_always_subtract_smaller": 0.06
+    }
+  },
+  "rct": {
+    "conditions": {
+      "adaptive": {
+        "n": 500,
+        "mean_test_pre": 0.42860000000000004,
+        "mean_test_post": 0.635,
+        "mean_test_gain": 0.2064,
+        "std_test_gain": 0.20376221435781466,
+        "median_test_gain": 0.2,
+        "mean_internal_gain": 0.19933930656770224,
+        "mean_misconceptions_resolved": 1.266,
+        "resolution_rate": 0.37670000000000003,
+        "mean_concepts_touched": 4.98,
+        "mean_diagnostic_sensitivity": 0.942
+      },
+      "random": {
+        "n": 500,
+        "mean_test_pre": 0.42719999999999997,
+        "mean_test_post": 0.5842,
+        "mean_test_gain": 0.157,
+        "std_test_gain": 0.196903529678876,
+        "median_test_gain": 0.19999999999999996,
+        "mean_internal_gain": 0.17838549454898975,
+        "mean_misconceptions_resolved": 0.0,
+        "resolution_rate": 0.0,
+        "mean_concepts_touched": 5.0,
+        "mean_diagnostic_sensitivity": 0.0
+      },
+      "fixed_sequence": {
+        "n": 500,
+        "mean_test_pre": 0.44079999999999997,
+        "mean_test_post": 0.5958,
+        "mean_test_gain": 0.155,
+        "std_test_gain": 0.19150718002205558,
+        "median_test_gain": 0.10000000000000009,
+        "mean_internal_gain": 0.18492977596001073,
+        "mean_misconceptions_resolved": 0.0,
+        "resolution_rate": 0.0,
+        "mean_concepts_touched": 5.0,
+        "mean_diagnostic_sensitivity": 0.0
+      },
+      "no_remediation": {
+        "n": 500,
+        "mean_test_pre": 0.4348,
+        "mean_test_post": 0.5864,
+        "mean_test_gain": 0.1516,
+        "std_test_gain": 0.19062381802912248,
+        "median_test_gain": 0.19999999999999996,
+        "mean_internal_gain": 0.17485856454729953,
+        "mean_misconceptions_resolved": 0.004,
+        "resolution_rate": 0.003,
+        "mean_concepts_touched": 4.818,
+        "mean_diagnostic_sensitivity": 0.0
+      }
+    },
+    "comparisons": {
+      "adaptive_vs_random": {
+        "test_score_gain": {
+          "t_statistic": 3.8944522615327903,
+          "p_value": 0.00010497821049067484,
+          "p_adjusted_bonferroni": 0.0003149346314720245,
+          "cohens_d": 0.24655346456948013,
+          "ci_95_lower": 0.11701442454747998,
+          "ci_95_upper": 0.373892820035996,
+          "significant_at_05": true
+        }
+      },
+      "adaptive_vs_fixed_sequence": {
+        "test_score_gain": {
+          "t_statistic": 4.106072050020711,
+          "p_value": 4.354919834344073e-05,
+          "p_adjusted_bonferroni": 0.0001306475950303222,
+          "cohens_d": 0.25995087928130456,
+          "ci_95_lower": 0.13168791248677705,
+          "ci_95_upper": 0.3864371343902039,
+          "significant_at_05": true
+        }
+      },
+      "adaptive_vs_no_remediation": {
+        "test_score_gain": {
+          "t_statistic": 4.38715975222105,
+          "p_value": 1.2710121563951373e-05,
+          "p_adjusted_bonferroni": 3.813036469185412e-05,
+          "cohens_d": 0.27774623076369537,
+          "ci_95_lower": 0.15633121006716552,
+          "ci_95_upper": 0.40243637265350557,
+          "significant_at_05": true
+        }
+      }
+    },
+    "effect_sizes": {
+      "adaptive_vs_random": 0.24655346456948013,
+      "adaptive_vs_fixed_sequence": 0.25995087928130456,
+      "adaptive_vs_no_remediation": 0.27774623076369537
+    }
+  },
+  "sensitivity": {
+    "bkt_0.5_res_0.30": {
+      "bkt_scale": 0.5,
+      "targeted_resolution": 0.3,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.22773532948341965,
+        "adaptive_vs_fixed_sequence": 0.12299608436667334,
+        "adaptive_vs_no_remediation": -0.035045808525646045
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.10300000000000001,
+          "resolution_rate": 0.15316666666666667,
+          "mean_concepts_touched": 4.855
+        },
+        "random": {
+          "mean_test_gain": 0.0575,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.079,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.10999999999999999,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.6
+        }
+      }
+    },
+    "bkt_0.5_res_0.50": {
+      "bkt_scale": 0.5,
+      "targeted_resolution": 0.5,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.14650809634756504,
+        "adaptive_vs_fixed_sequence": 0.19557672570142468,
+        "adaptive_vs_no_remediation": 0.03721185162934985
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.1175,
+          "resolution_rate": 0.462,
+          "mean_concepts_touched": 4.86
+        },
+        "random": {
+          "mean_test_gain": 0.0885,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.99
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.079,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.10999999999999999,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.6
+        }
+      }
+    },
+    "bkt_0.5_res_0.70": {
+      "bkt_scale": 0.5,
+      "targeted_resolution": 0.7,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.08555498343052172,
+        "adaptive_vs_fixed_sequence": 0.039233757842613216,
+        "adaptive_vs_no_remediation": -0.08754081353868956
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.0955,
+          "resolution_rate": 0.65825,
+          "mean_concepts_touched": 4.85
+        },
+        "random": {
+          "mean_test_gain": 0.079,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.08800000000000001,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.1125,
+          "resolution_rate": 0.0025,
+          "mean_concepts_touched": 4.68
+        }
+      }
+    },
+    "bkt_1.0_res_0.30": {
+      "bkt_scale": 1.0,
+      "targeted_resolution": 0.3,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.0457550395676001,
+        "adaptive_vs_fixed_sequence": -0.05617749673073571,
+        "adaptive_vs_no_remediation": -0.13645140841827247
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.17149999999999999,
+          "resolution_rate": 0.11491666666666667,
+          "mean_concepts_touched": 4.975
+        },
+        "random": {
+          "mean_test_gain": 0.1625,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.1825,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.19799999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.82
+        }
+      }
+    },
+    "bkt_1.0_res_0.50": {
+      "bkt_scale": 1.0,
+      "targeted_resolution": 0.5,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.11093750100700303,
+        "adaptive_vs_fixed_sequence": 0.13699001930474014,
+        "adaptive_vs_no_remediation": -0.050847326122897205
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.1885,
+          "resolution_rate": 0.3795833333333333,
+          "mean_concepts_touched": 4.97
+        },
+        "random": {
+          "mean_test_gain": 0.16799999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.161,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.19799999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.82
+        }
+      }
+    },
+    "bkt_1.0_res_0.70": {
+      "bkt_scale": 1.0,
+      "targeted_resolution": 0.7,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.09341960034258558,
+        "adaptive_vs_fixed_sequence": 0.05401953834897222,
+        "adaptive_vs_no_remediation": 0.2693210776867957
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.1875,
+          "resolution_rate": 0.5997499999999999,
+          "mean_concepts_touched": 4.945
+        },
+        "random": {
+          "mean_test_gain": 0.16899999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.1775,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.13449999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.865
+        }
+      }
+    },
+    "bkt_1.5_res_0.30": {
+      "bkt_scale": 1.5,
+      "targeted_resolution": 0.3,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.26428876367144033,
+        "adaptive_vs_fixed_sequence": 0.14782448978865953,
+        "adaptive_vs_no_remediation": 0.24433961808569357
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.2755,
+          "resolution_rate": 0.061750000000000006,
+          "mean_concepts_touched": 4.99
+        },
+        "random": {
+          "mean_test_gain": 0.22299999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.995
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.24699999999999997,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.22549999999999998,
+          "resolution_rate": 0.0025,
+          "mean_concepts_touched": 4.99
+        }
+      }
+    },
+    "bkt_1.5_res_0.50": {
+      "bkt_scale": 1.5,
+      "targeted_resolution": 0.5,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.3297847069491893,
+        "adaptive_vs_fixed_sequence": 0.20258960723172287,
+        "adaptive_vs_no_remediation": 0.2979197107380383
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.285,
+          "resolution_rate": 0.3415000000000001,
+          "mean_concepts_touched": 5.0
+        },
+        "random": {
+          "mean_test_gain": 0.22049999999999997,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.995
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.24699999999999997,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.22549999999999998,
+          "resolution_rate": 0.0025,
+          "mean_concepts_touched": 4.99
+        }
+      }
+    },
+    "bkt_1.5_res_0.70": {
+      "bkt_scale": 1.5,
+      "targeted_resolution": 0.7,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.23812977079628758,
+        "adaptive_vs_fixed_sequence": 0.17122970397633058,
+        "adaptive_vs_no_remediation": 0.19331789722693482
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.2695,
+          "resolution_rate": 0.5835833333333333,
+          "mean_concepts_touched": 4.975
+        },
+        "random": {
+          "mean_test_gain": 0.22,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.237,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.23149999999999998,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.915
+        }
+      }
+    },
+    "bkt_2.0_res_0.30": {
+      "bkt_scale": 2.0,
+      "targeted_resolution": 0.3,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.19087827111853037,
+        "adaptive_vs_fixed_sequence": 0.05112916131313896,
+        "adaptive_vs_no_remediation": 0.3647229402561
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.34650000000000003,
+          "resolution_rate": 0.05333333333333334,
+          "mean_concepts_touched": 4.99
+        },
+        "random": {
+          "mean_test_gain": 0.3085,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.33649999999999997,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.275,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 4.98
+        }
+      }
+    },
+    "bkt_2.0_res_0.50": {
+      "bkt_scale": 2.0,
+      "targeted_resolution": 0.5,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.3347316145012354,
+        "adaptive_vs_fixed_sequence": 0.13298939781539598,
+        "adaptive_vs_no_remediation": 0.18731663575775082
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.3425,
+          "resolution_rate": 0.317,
+          "mean_concepts_touched": 5.0
+        },
+        "random": {
+          "mean_test_gain": 0.27149999999999996,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.315,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.303,
+          "resolution_rate": 0.0025,
+          "mean_concepts_touched": 4.99
+        }
+      }
+    },
+    "bkt_2.0_res_0.70": {
+      "bkt_scale": 2.0,
+      "targeted_resolution": 0.7,
+      "effect_sizes": {
+        "adaptive_vs_random": 0.332873674865228,
+        "adaptive_vs_fixed_sequence": 0.1550410237685811,
+        "adaptive_vs_no_remediation": 0.19765636312233809
+      },
+      "conditions": {
+        "adaptive": {
+          "mean_test_gain": 0.3440000000000001,
+          "resolution_rate": 0.5530833333333334,
+          "mean_concepts_touched": 5.0
+        },
+        "random": {
+          "mean_test_gain": 0.2735,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "fixed_sequence": {
+          "mean_test_gain": 0.3125,
+          "resolution_rate": 0.0,
+          "mean_concepts_touched": 5.0
+        },
+        "no_remediation": {
+          "mean_test_gain": 0.303,
+          "resolution_rate": 0.0025,
+          "mean_concepts_touched": 4.99
+        }
+      }
+    },
+    "robust": false
+  },
+  "interpretation": {
+    "summary": [
+      "METRIC: Held-out test score (independent of BKT)",
+      "",
+      "Adaptive condition:",
+      "  Pre-test:  0.429",
+      "  Post-test: 0.635",
+      "  Gain:      +0.206",
+      "  Misconception resolution: 37.7%",
+      "  Concepts touched: 5.0/5",
+      "  Diagnostic sensitivity: 94.2%",
+      "",
+      "Largest effect size: d = 0.278 (adaptive_vs_no_remediation)",
+      "Small effect; further investigation needed",
+      "",
+      "WARNING: Results NOT fully robust across parameter variation",
+      "",
+      "METHODOLOGY NOTES:",
+      "  - Primary metric: held-out test problems (decoupled from BKT)",
+      "  - Pre/post test on fixed problem set, not internal model state",
+      "  - Adaptive strategy includes coverage floor (max 6 consecutive on one concept)",
+      "  - These remain simulated results validating system behavior",
+      "  - A human RCT (n>=100 per group) is required for effect size claims"
+    ],
+    "primary_metric": "held-out test score gain",
+    "bloom_2sigma_achievable": false,
+    "realistic_target": "d = 0.5-0.8 on aligned assessments",
+    "evidence_level": "Stage 2: Simulated evaluation with decoupled assessment",
+    "next_step": "Stage 3: Wizard-of-Oz pilot with 5-10 real students",
+    "methodology_improvements_over_v1": [
+      "Test score measured on held-out problems, not internal BKT state",
+      "Coverage floor prevents adaptive strategy from fixating on one concept",
+      "Misconception resolution rate tuned to be achievable",
+      "Diagnostic sensitivity tracked as independent metric",
+      "Sensitivity analysis varies both BKT params and resolution rates"
+    ]
+  }
+}

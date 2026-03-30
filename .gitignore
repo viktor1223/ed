@@ -32,9 +32,20 @@ models/classifier/checkpoint-*/
 # Data artifacts that can be regenerated
 data/dataset/
 data/raw/
+data/ed.db
+
+# Node
+node_modules/
+.next/
 
 # Pytest
 .pytest_cache/
 
 # Copilot tracking (dev artifacts)
 .copilot-tracking/
+
+# Frontend (separate repo)
+frontend/
+
+# Web (legacy)
+web/
