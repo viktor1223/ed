@@ -18,6 +18,12 @@ estimated_reading_time: 25
 
 <!-- markdownlint-disable MD013 MD033 -->
 
+> [!NOTE]
+> The simulated student has been extracted into a standalone repository:
+> [viktor1223/simulated-student](https://github.com/viktor1223/simulated-student).
+> That repo contains the production code, SOTA benchmarks, and research roadmap.
+> This document remains as the original literature survey.
+
 ## Executive Summary
 
 This document surveys the state of simulated student models for intelligent
