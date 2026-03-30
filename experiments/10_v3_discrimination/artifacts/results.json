@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "experiment": "10_v3_discrimination",
+    "n_students": 300,
+    "n_interactions": 40,
+    "seed": 42,
+    "method": "direct internal state measurement"
+  },
+  "conditions": {
+    "perfect": {
+      "condition": "perfect",
+      "p_know_delta_mean": 0.0213,
+      "p_know_delta_std": 0.0187,
+      "resolution_rate": 0.0355,
+      "reinforcement_rate": 0.0,
+      "confusion_mean": 0.04
+    },
+    "random": {
+      "condition": "random",
+      "p_know_delta_mean": 0.0116,
+      "p_know_delta_std": 0.0124,
+      "resolution_rate": 0.013,
+      "reinforcement_rate": 0.1367,
+      "confusion_mean": 16.75
+    },
+    "always_wrong": {
+      "condition": "always_wrong",
+      "p_know_delta_mean": 0.0,
+      "p_know_delta_std": 0.0,
+      "resolution_rate": 0.0,
+      "reinforcement_rate": 0.6105,
+      "confusion_mean": 40.0
+    },
+    "no_instruction": {
+      "condition": "no_instruction",
+      "p_know_delta_mean": 0.0,
+      "p_know_delta_std": 0.0,
+      "resolution_rate": 0.0,
+      "reinforcement_rate": 0.0,
+      "confusion_mean": 0.0
+    }
+  },
+  "tests": {
+    "perfect_vs_wrong_d": 1.6024,
+    "perfect_vs_wrong_p": 0.0,
+    "perfect_vs_random_d": 0.6075,
+    "perfect_vs_random_p": 0.0,
+    "resolution_perfect": 0.0355,
+    "resolution_wrong": 0.0,
+    "reinforcement_wrong": 0.6105,
+    "ordering_correct": true,
+    "all_pass": true
+  }
+}

@@ -1,0 +1,299 @@
+{
+    "metadata": {
+        "version": "2.0.0",
+        "description": "Expanded algebra misconception knowledge graph with branching prerequisites",
+        "source": "Extended from MaE Dataset (Otero et al., 2024) with standard algebra curriculum",
+        "created": "2026-03-30",
+        "mastery_threshold": 0.85,
+        "mastery_initial": 0.5
+    },
+    "concepts": [
+        {
+            "id": "integer_sign_ops",
+            "name": "Integer & Sign Operations",
+            "description": "Arithmetic with negative numbers: addition, subtraction, multiplication, division with signed integers.",
+            "level": 1,
+            "prerequisites": [],
+            "bkt_params": {"p_init": 0.15, "p_learn": 0.15, "p_guess": 0.10, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "sign_sum_negatives", "label": "Sum of negatives becomes positive", "description": "Student adds two negative numbers and gets a positive result.", "examples": [{"problem": "Simplify: -6 - 3", "wrong": "9", "correct": "-9"}, {"problem": "Simplify: -5 - 4", "wrong": "9", "correct": "-9"}]},
+                {"id": "sign_neg_times_neg", "label": "Negative times negative gives negative", "description": "Student multiplies two negatives and keeps the result negative.", "examples": [{"problem": "Simplify: -3 * (-4)", "wrong": "-12", "correct": "12"}, {"problem": "Simplify: -2 * (-5)", "wrong": "-10", "correct": "10"}]},
+                {"id": "sign_sub_negative", "label": "Subtracting a negative treated as subtraction", "description": "Student treats x - (-y) as x - y.", "examples": [{"problem": "Simplify: 7 - (-3)", "wrong": "4", "correct": "10"}, {"problem": "Simplify: 10 - (-2)", "wrong": "8", "correct": "12"}]},
+                {"id": "sign_always_subtract_smaller", "label": "Always subtract smaller from larger", "description": "Student ignores sign and subtracts smaller from larger.", "examples": [{"problem": "Simplify: -3 + 8", "wrong": "-5", "correct": "5"}, {"problem": "Simplify: 4 + (-9)", "wrong": "5", "correct": "-5"}]}
+            ]
+        },
+        {
+            "id": "fractions_basic",
+            "name": "Basic Fraction Operations",
+            "description": "Adding, subtracting, multiplying, dividing fractions and finding common denominators.",
+            "level": 1,
+            "prerequisites": [],
+            "bkt_params": {"p_init": 0.10, "p_learn": 0.12, "p_guess": 0.08, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "frac_add_denom", "label": "Add denominators when adding fractions", "description": "Student adds both numerators and denominators.", "examples": [{"problem": "Simplify: 1/3 + 1/4", "wrong": "2/7", "correct": "7/12"}, {"problem": "Simplify: 2/5 + 1/3", "wrong": "3/8", "correct": "11/15"}]},
+                {"id": "frac_cross_multiply_add", "label": "Cross multiply when adding", "description": "Student cross-multiplies instead of finding common denominator.", "examples": [{"problem": "Simplify: 1/2 + 1/3", "wrong": "5/5", "correct": "5/6"}, {"problem": "Simplify: 2/3 + 3/4", "wrong": "17/12", "correct": "17/12"}]},
+                {"id": "frac_flip_wrong_one", "label": "Flip dividend instead of divisor", "description": "When dividing fractions, student flips the first fraction instead of the second.", "examples": [{"problem": "Simplify: 2/3 / 4/5", "wrong": "12/10", "correct": "10/12"}, {"problem": "Simplify: 3/4 / 1/2", "wrong": "2/12", "correct": "6/4"}]}
+            ]
+        },
+        {
+            "id": "order_of_operations",
+            "name": "Order of Operations",
+            "description": "PEMDAS/BODMAS rules for evaluating expressions with mixed operations.",
+            "level": 2,
+            "prerequisites": ["integer_sign_ops"],
+            "bkt_params": {"p_init": 0.10, "p_learn": 0.10, "p_guess": 0.10, "p_slip": 0.15},
+            "misconceptions": [
+                {"id": "oo_left_to_right", "label": "Left-to-right ignoring precedence", "description": "Student evaluates strictly left to right without considering precedence.", "examples": [{"problem": "Simplify: 3 + 4 * 2", "wrong": "14", "correct": "11"}, {"problem": "Simplify: 10 - 2 * 3", "wrong": "24", "correct": "4"}]},
+                {"id": "oo_exponent_after_add", "label": "Exponents applied after addition", "description": "Student adds before applying exponent.", "examples": [{"problem": "Simplify: 2 + 3^2", "wrong": "25", "correct": "11"}, {"problem": "Simplify: 1 + 4^2", "wrong": "25", "correct": "17"}]},
+                {"id": "oo_parentheses_ignored", "label": "Parentheses ignored", "description": "Student ignores parentheses and follows wrong precedence.", "examples": [{"problem": "Simplify: (2 + 3) * 4", "wrong": "14", "correct": "20"}, {"problem": "Simplify: 6 / (1 + 2)", "wrong": "5", "correct": "2"}]}
+            ]
+        },
+        {
+            "id": "exponent_rules",
+            "name": "Exponent Rules",
+            "description": "Laws of exponents: product rule, power rule, zero exponent, negative exponents.",
+            "level": 2,
+            "prerequisites": ["integer_sign_ops"],
+            "bkt_params": {"p_init": 0.08, "p_learn": 0.10, "p_guess": 0.08, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "exp_multiply_bases", "label": "Multiply bases instead of adding exponents", "description": "For x^a * x^b, student multiplies bases instead of adding exponents.", "examples": [{"problem": "Simplify: x^3 * x^2", "wrong": "x^6", "correct": "x^5"}, {"problem": "Simplify: 2^3 * 2^4", "wrong": "4^7", "correct": "2^7"}]},
+                {"id": "exp_zero_equals_zero", "label": "x^0 = 0 instead of 1", "description": "Student thinks anything to the zero power is zero.", "examples": [{"problem": "Simplify: 5^0", "wrong": "0", "correct": "1"}, {"problem": "Simplify: (-3)^0", "wrong": "0", "correct": "1"}]},
+                {"id": "exp_negative_makes_negative", "label": "Negative exponent makes value negative", "description": "Student thinks x^(-n) = -x^n instead of 1/x^n.", "examples": [{"problem": "Simplify: 2^(-3)", "wrong": "-8", "correct": "1/8"}, {"problem": "Simplify: 5^(-2)", "wrong": "-25", "correct": "1/25"}]}
+            ]
+        },
+        {
+            "id": "ratios_proportions",
+            "name": "Ratios & Proportions",
+            "description": "Setting up and solving proportions, unit rates, and ratio comparisons.",
+            "level": 2,
+            "prerequisites": ["fractions_basic"],
+            "bkt_params": {"p_init": 0.10, "p_learn": 0.12, "p_guess": 0.08, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "ratio_additive", "label": "Additive instead of multiplicative reasoning", "description": "Student adds a constant instead of multiplying by scale factor.", "examples": [{"problem": "If 3:5 = x:15, find x", "wrong": "13", "correct": "9"}, {"problem": "If 2:7 = 6:x, find x", "wrong": "11", "correct": "21"}]},
+                {"id": "ratio_invert_setup", "label": "Set up proportion inverted", "description": "Student sets up cross multiplication with wrong pairing.", "examples": [{"problem": "If 4 widgets cost $12, how much do 7 cost?", "wrong": "$28", "correct": "$21"}, {"problem": "If 3 pencils cost $1.50, how much do 10 cost?", "wrong": "$6.00", "correct": "$5.00"}]}
+            ]
+        },
+        {
+            "id": "distributive_property",
+            "name": "Distributive Property",
+            "description": "Applying a(b+c) = ab + ac and factoring common factors.",
+            "level": 3,
+            "prerequisites": ["order_of_operations", "integer_sign_ops"],
+            "bkt_params": {"p_init": 0.05, "p_learn": 0.15, "p_guess": 0.05, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "dist_first_term_only", "label": "Only distribute to first term", "description": "Student multiplies only the first term inside parentheses.", "examples": [{"problem": "Expand: 3(x + 4)", "wrong": "3x + 4", "correct": "3x + 12"}, {"problem": "Expand: -2(a + 5)", "wrong": "-2a + 5", "correct": "-2a - 10"}]},
+                {"id": "dist_square_over_addition", "label": "Square distributes over addition", "description": "Student treats (a+b)^2 as a^2 + b^2.", "examples": [{"problem": "Expand: (x + 3)^2", "wrong": "x^2 + 9", "correct": "x^2 + 6x + 9"}, {"problem": "Expand: (a + 2)^2", "wrong": "a^2 + 4", "correct": "a^2 + 4a + 4"}]},
+                {"id": "dist_sign_error_negative", "label": "Sign error when distributing negative", "description": "Student forgets to change signs when distributing a negative.", "examples": [{"problem": "Expand: -2(x - 3)", "wrong": "-2x - 6", "correct": "-2x + 6"}, {"problem": "Expand: -(4 - y)", "wrong": "-4 - y", "correct": "-4 + y"}]},
+                {"id": "dist_drop_parens", "label": "Drop parentheses without distributing", "description": "Student removes parentheses but doesn't multiply.", "examples": [{"problem": "Expand: 5(2x + 1)", "wrong": "2x + 1", "correct": "10x + 5"}, {"problem": "Expand: 4(a - 3)", "wrong": "a - 3", "correct": "4a - 12"}]}
+            ]
+        },
+        {
+            "id": "combining_like_terms",
+            "name": "Combining Like Terms",
+            "description": "Identifying and combining terms with the same variable and exponent.",
+            "level": 3,
+            "prerequisites": ["order_of_operations"],
+            "bkt_params": {"p_init": 0.10, "p_learn": 0.20, "p_guess": 0.05, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "clt_combine_unlike", "label": "Combine unlike terms", "description": "Student adds coefficients of terms with different variables or exponents.", "examples": [{"problem": "Simplify: 3x + 2y", "wrong": "5xy", "correct": "3x + 2y"}, {"problem": "Simplify: 4x^2 + 3x", "wrong": "7x^3", "correct": "4x^2 + 3x"}]},
+                {"id": "clt_multiply_variables", "label": "Multiply variables when combining", "description": "Student multiplies instead of adding like terms.", "examples": [{"problem": "Simplify: 2x + 3x", "wrong": "6x^2", "correct": "5x"}, {"problem": "Simplify: 4a + a", "wrong": "4a^2", "correct": "5a"}]},
+                {"id": "clt_add_exponents", "label": "Add exponents when combining", "description": "Student adds exponents when combining like terms.", "examples": [{"problem": "Simplify: x^2 + 3x^2", "wrong": "4x^4", "correct": "4x^2"}, {"problem": "Simplify: 2y^3 + y^3", "wrong": "3y^6", "correct": "3y^3"}]}
+            ]
+        },
+        {
+            "id": "fraction_equations",
+            "name": "Equations with Fractions",
+            "description": "Solving equations that contain fractions by clearing denominators.",
+            "level": 3,
+            "prerequisites": ["fractions_basic", "ratios_proportions"],
+            "bkt_params": {"p_init": 0.05, "p_learn": 0.10, "p_guess": 0.05, "p_slip": 0.15},
+            "misconceptions": [
+                {"id": "feq_clear_only_one", "label": "Clear only one denominator", "description": "When clearing fractions, student multiplies only one side or one term.", "examples": [{"problem": "Solve: x/3 + 1/6 = 1", "wrong": "x = 5/6", "correct": "x = 5/2"}, {"problem": "Solve: x/2 = 3/4", "wrong": "x = 3/8", "correct": "x = 3/2"}]},
+                {"id": "feq_wrong_lcd", "label": "Wrong LCD chosen", "description": "Student picks an incorrect least common denominator.", "examples": [{"problem": "Solve: x/4 + x/6 = 5", "wrong": "x = 10", "correct": "x = 12"}, {"problem": "Solve: 1/3 + 1/x = 1", "wrong": "x = 2", "correct": "x = 3/2"}]}
+            ]
+        },
+        {
+            "id": "variables_expressions",
+            "name": "Variables & Expressions",
+            "description": "Translating words into algebraic expressions and evaluating expressions.",
+            "level": 2,
+            "prerequisites": ["integer_sign_ops"],
+            "bkt_params": {"p_init": 0.12, "p_learn": 0.15, "p_guess": 0.10, "p_slip": 0.08},
+            "misconceptions": [
+                {"id": "var_literal_letter", "label": "Variable is a label not a number", "description": "Student treats the variable as a letter label rather than an unknown number.", "examples": [{"problem": "If x = 3, evaluate 2x + 1", "wrong": "2x + 1", "correct": "7"}, {"problem": "Evaluate 5a when a = 4", "wrong": "5a", "correct": "20"}]},
+                {"id": "var_concatenate", "label": "Concatenate instead of multiply", "description": "Student writes 2x as 2 concatenated with x (like 23).", "examples": [{"problem": "If x = 5, evaluate 3x", "wrong": "35", "correct": "15"}, {"problem": "If y = 7, evaluate 2y", "wrong": "27", "correct": "14"}]}
+            ]
+        },
+        {
+            "id": "solving_linear_equations",
+            "name": "Solving Linear Equations",
+            "description": "Isolating the variable in one-step and multi-step linear equations.",
+            "level": 4,
+            "prerequisites": ["combining_like_terms", "distributive_property"],
+            "bkt_params": {"p_init": 0.05, "p_learn": 0.10, "p_guess": 0.05, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "leq_reverse_operation", "label": "Apply same operation instead of inverse", "description": "Student adds when should subtract (or vice versa).", "examples": [{"problem": "Solve: x + 5 = 12", "wrong": "x = 17", "correct": "x = 7"}, {"problem": "Solve: x - 3 = 10", "wrong": "x = 7", "correct": "x = 13"}]},
+                {"id": "leq_divide_wrong_direction", "label": "Multiply instead of divide", "description": "Student multiplies both sides when should divide.", "examples": [{"problem": "Solve: 3x = 15", "wrong": "x = 45", "correct": "x = 5"}, {"problem": "Solve: 4x = 20", "wrong": "x = 80", "correct": "x = 5"}]},
+                {"id": "leq_subtract_wrong_side", "label": "Operate on wrong side of equation", "description": "Student applies operation to the wrong side.", "examples": [{"problem": "Solve: x + 7 = 15", "wrong": "x = 22", "correct": "x = 8"}, {"problem": "Solve: 2x = 10", "wrong": "x = 20", "correct": "x = 5"}]},
+                {"id": "leq_move_without_sign_change", "label": "Move term without changing sign", "description": "Student moves a term across the equals sign without flipping its sign.", "examples": [{"problem": "Solve: x - 4 = 6", "wrong": "x = 2", "correct": "x = 10"}, {"problem": "Solve: x + 3 = 11", "wrong": "x = 14", "correct": "x = 8"}]}
+            ]
+        },
+        {
+            "id": "inequalities_basic",
+            "name": "Solving Inequalities",
+            "description": "Solving and graphing one-variable linear inequalities, including sign flip on multiply/divide by negative.",
+            "level": 4,
+            "prerequisites": ["solving_linear_equations"],
+            "bkt_params": {"p_init": 0.05, "p_learn": 0.10, "p_guess": 0.05, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "ineq_no_sign_flip", "label": "Don't flip sign when dividing by negative", "description": "Student divides both sides by a negative but keeps inequality direction.", "examples": [{"problem": "Solve: -2x > 6", "wrong": "x > -3", "correct": "x < -3"}, {"problem": "Solve: -3x < 12", "wrong": "x < -4", "correct": "x > -4"}]},
+                {"id": "ineq_flip_always", "label": "Always flip the inequality sign", "description": "Student flips the sign even when dividing by a positive.", "examples": [{"problem": "Solve: 2x > 8", "wrong": "x < 4", "correct": "x > 4"}, {"problem": "Solve: 5x < 25", "wrong": "x > 5", "correct": "x < 5"}]}
+            ]
+        },
+        {
+            "id": "multi_step_equations",
+            "name": "Multi-Step Equations",
+            "description": "Solving equations requiring distribution, combining like terms, and multiple inverse operations.",
+            "level": 5,
+            "prerequisites": ["solving_linear_equations", "distributive_property"],
+            "bkt_params": {"p_init": 0.03, "p_learn": 0.08, "p_guess": 0.05, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "mse_wrong_step_order", "label": "Perform steps in wrong order", "description": "Student divides before combining like terms or distributing.", "examples": [{"problem": "Solve: 2(x + 3) = 14", "wrong": "x + 3 = 7, x = 4 (but via wrong path)", "correct": "x = 4"}, {"problem": "Solve: 3x + 2x = 25", "wrong": "x = 25/3 (only used 3x)", "correct": "x = 5"}]},
+                {"id": "mse_dist_then_forget", "label": "Distribute but forget a term", "description": "Student distributes correctly but drops a term in the next step.", "examples": [{"problem": "Solve: 2(x + 4) + 3 = 15", "wrong": "2x + 3 = 15, x = 6", "correct": "2x + 11 = 15, x = 2"}, {"problem": "Solve: 3(x - 1) + x = 9", "wrong": "3x + x = 9, x = 9/4", "correct": "4x - 3 = 9, x = 3"}]},
+                {"id": "mse_variable_both_sides_error", "label": "Error collecting variables from both sides", "description": "Student makes sign errors when moving variables across equals.", "examples": [{"problem": "Solve: 5x + 2 = 3x + 10", "wrong": "8x = 12, x = 3/2", "correct": "2x = 8, x = 4"}, {"problem": "Solve: 4x - 1 = 2x + 7", "wrong": "6x = 6, x = 1", "correct": "2x = 8, x = 4"}]}
+            ]
+        },
+        {
+            "id": "absolute_value",
+            "name": "Absolute Value",
+            "description": "Evaluating absolute value expressions and solving absolute value equations.",
+            "level": 3,
+            "prerequisites": ["integer_sign_ops", "variables_expressions"],
+            "bkt_params": {"p_init": 0.08, "p_learn": 0.12, "p_guess": 0.08, "p_slip": 0.10},
+            "misconceptions": [
+                {"id": "abs_makes_positive", "label": "Absolute value just removes sign", "description": "Student thinks |x| always equals x, ignoring that it could be -x.", "examples": [{"problem": "Solve: |x| = 5", "wrong": "x = 5", "correct": "x = 5 or x = -5"}, {"problem": "Solve: |x - 3| = 7", "wrong": "x = 10", "correct": "x = 10 or x = -4"}]},
+                {"id": "abs_distribute_inside", "label": "Distribute absolute value to each term", "description": "Student applies absolute value to each term separately.", "examples": [{"problem": "Evaluate: |3 - 8|", "wrong": "3 + 8 = 11", "correct": "5"}, {"problem": "Evaluate: |-2 + 5|", "wrong": "2 + 5 = 7", "correct": "3"}]}
+            ]
+        },
+        {
+            "id": "coordinate_plane",
+            "name": "Coordinate Plane & Plotting",
+            "description": "Identifying and plotting ordered pairs, understanding quadrants.",
+            "level": 2,
+            "prerequisites": ["integer_sign_ops"],
+            "bkt_params": {"p_init": 0.15, "p_learn": 0.18, "p_guess": 0.10, "p_slip": 0.08},
+            "misconceptions": [
+                {"id": "coord_swap_xy", "label": "Swap x and y coordinates", "description": "Student plots (y, x) instead of (x, y).", "examples": [{"problem": "Plot the point (3, -2)", "wrong": "(-2, 3)", "correct": "(3, -2)"}, {"problem": "Plot the point (-1, 4)", "wrong": "(4, -1)", "correct": "(-1, 4)"}]},
+                {"id": "coord_wrong_quadrant", "label": "Wrong quadrant for negative coordinates", "description": "Student places point in wrong quadrant when coordinates are negative.", "examples": [{"problem": "Which quadrant is (-3, 2) in?", "wrong": "Quadrant IV", "correct": "Quadrant II"}, {"problem": "Which quadrant is (1, -5) in?", "wrong": "Quadrant II", "correct": "Quadrant IV"}]}
+            ]
+        },
+        {
+            "id": "slope_concept",
+            "name": "Slope of a Line",
+            "description": "Calculating slope from two points, interpreting slope as rate of change.",
+            "level": 4,
+            "prerequisites": ["coordinate_plane", "fractions_basic"],
+            "bkt_params": {"p_init": 0.05, "p_learn": 0.10, "p_guess": 0.05, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "slope_run_over_rise", "label": "Slope = run/rise instead of rise/run", "description": "Student computes delta_x/delta_y instead of delta_y/delta_x.", "examples": [{"problem": "Find slope between (1,2) and (3,8)", "wrong": "1/3", "correct": "3"}, {"problem": "Find slope between (0,0) and (4,2)", "wrong": "2", "correct": "1/2"}]},
+                {"id": "slope_subtract_wrong_order", "label": "Inconsistent subtraction order", "description": "Student subtracts x1-x2 in numerator but x2-x1 in denominator.", "examples": [{"problem": "Find slope between (2,3) and (5,9)", "wrong": "-2", "correct": "2"}, {"problem": "Find slope between (1,4) and (3,10)", "wrong": "-3", "correct": "3"}]}
+            ]
+        },
+        {
+            "id": "linear_functions",
+            "name": "Linear Functions (y = mx + b)",
+            "description": "Slope-intercept form, graphing lines, finding equations from graphs.",
+            "level": 5,
+            "prerequisites": ["slope_concept", "solving_linear_equations"],
+            "bkt_params": {"p_init": 0.03, "p_learn": 0.08, "p_guess": 0.05, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "lf_confuse_m_and_b", "label": "Confuse slope and y-intercept", "description": "Student reads m as the intercept and b as the slope.", "examples": [{"problem": "What is the slope of y = 3x + 5?", "wrong": "5", "correct": "3"}, {"problem": "What is the y-intercept of y = -2x + 7?", "wrong": "-2", "correct": "7"}]},
+                {"id": "lf_intercept_is_x", "label": "Y-intercept is where y=0", "description": "Student finds x-intercept instead of y-intercept.", "examples": [{"problem": "Find y-intercept of y = 2x + 6", "wrong": "(-3, 0)", "correct": "(0, 6)"}, {"problem": "Find y-intercept of y = x - 4", "wrong": "(4, 0)", "correct": "(0, -4)"}]},
+                {"id": "lf_parallel_same_b", "label": "Parallel lines have same intercept", "description": "Student confuses same slope (parallel) with same intercept.", "examples": [{"problem": "Which line is parallel to y = 2x + 3?", "wrong": "y = 5x + 3", "correct": "y = 2x - 1"}, {"problem": "Are y = -x + 1 and y = -x + 5 parallel?", "wrong": "No", "correct": "Yes"}]}
+            ]
+        },
+        {
+            "id": "systems_of_equations",
+            "name": "Systems of Linear Equations",
+            "description": "Solving pairs of linear equations by substitution or elimination.",
+            "level": 6,
+            "prerequisites": ["linear_functions", "multi_step_equations"],
+            "bkt_params": {"p_init": 0.02, "p_learn": 0.06, "p_guess": 0.03, "p_slip": 0.15},
+            "misconceptions": [
+                {"id": "sys_add_without_aligning", "label": "Add equations without aligning coefficients", "description": "Student adds equations directly without making coefficients match.", "examples": [{"problem": "Solve: x + y = 5, 2x + y = 8", "wrong": "3x + 2y = 13", "correct": "x = 3, y = 2"}, {"problem": "Solve: x - y = 1, x + y = 5", "wrong": "2x = 6 (correct!)", "correct": "x = 3, y = 2"}]},
+                {"id": "sys_substitute_wrong", "label": "Substitute into same equation", "description": "After solving for one variable, student substitutes back into the same equation.", "examples": [{"problem": "From x = 3 and x + y = 5", "wrong": "3 + y = 5 from eq1 (correct) but uses eq1 if derived from it", "correct": "y = 2"}, {"problem": "Solve: y = 2x, 3x + y = 10", "wrong": "3(2y) + y = 10", "correct": "3x + 2x = 10, x = 2, y = 4"}]},
+                {"id": "sys_forget_second_var", "label": "Find one variable and stop", "description": "Student finds x but forgets to find y.", "examples": [{"problem": "Solve: x + y = 7, x - y = 3", "wrong": "x = 5", "correct": "x = 5, y = 2"}, {"problem": "Solve: 2x + y = 10, x = 3", "wrong": "x = 3", "correct": "x = 3, y = 4"}]}
+            ]
+        },
+        {
+            "id": "polynomials_basic",
+            "name": "Polynomial Operations",
+            "description": "Adding, subtracting, and multiplying polynomials.",
+            "level": 5,
+            "prerequisites": ["distributive_property", "combining_like_terms", "exponent_rules"],
+            "bkt_params": {"p_init": 0.03, "p_learn": 0.08, "p_guess": 0.05, "p_slip": 0.12},
+            "misconceptions": [
+                {"id": "poly_add_exponents_on_add", "label": "Add exponents when adding polynomials", "description": "Student adds exponents when adding like terms in polynomials.", "examples": [{"problem": "Simplify: 3x^2 + 5x^2", "wrong": "8x^4", "correct": "8x^2"}, {"problem": "Simplify: x^3 + 2x^3", "wrong": "3x^6", "correct": "3x^3"}]},
+                {"id": "poly_foil_missing_terms", "label": "Missing terms in FOIL", "description": "Student forgets inner or outer terms when multiplying binomials.", "examples": [{"problem": "Expand: (x + 2)(x + 3)", "wrong": "x^2 + 6", "correct": "x^2 + 5x + 6"}, {"problem": "Expand: (x - 1)(x + 4)", "wrong": "x^2 - 4", "correct": "x^2 + 3x - 4"}]},
+                {"id": "poly_subtract_sign_error", "label": "Sign error subtracting polynomials", "description": "Student forgets to distribute the negative when subtracting.", "examples": [{"problem": "Simplify: (3x + 2) - (x + 5)", "wrong": "2x + 7", "correct": "2x - 3"}, {"problem": "Simplify: (4x^2 - 1) - (2x^2 + 3)", "wrong": "2x^2 + 2", "correct": "2x^2 - 4"}]}
+            ]
+        },
+        {
+            "id": "factoring_basic",
+            "name": "Factoring Polynomials",
+            "description": "Factoring out GCF, factoring trinomials, difference of squares.",
+            "level": 6,
+            "prerequisites": ["polynomials_basic"],
+            "bkt_params": {"p_init": 0.02, "p_learn": 0.06, "p_guess": 0.03, "p_slip": 0.15},
+            "misconceptions": [
+                {"id": "factor_sum_not_product", "label": "Find numbers that add not multiply to c", "description": "For x^2 + bx + c, student finds numbers that add to c instead of multiply to c and add to b.", "examples": [{"problem": "Factor: x^2 + 5x + 6", "wrong": "(x + 1)(x + 5)", "correct": "(x + 2)(x + 3)"}, {"problem": "Factor: x^2 + 7x + 12", "wrong": "(x + 5)(x + 7)", "correct": "(x + 3)(x + 4)"}]},
+                {"id": "factor_diff_squares_sign", "label": "Wrong signs in difference of squares", "description": "Student writes a^2 - b^2 = (a - b)(a - b) instead of (a+b)(a-b).", "examples": [{"problem": "Factor: x^2 - 9", "wrong": "(x - 3)(x - 3)", "correct": "(x + 3)(x - 3)"}, {"problem": "Factor: 4x^2 - 25", "wrong": "(2x - 5)(2x - 5)", "correct": "(2x + 5)(2x - 5)"}]},
+                {"id": "factor_gcf_incomplete", "label": "Factor out partial GCF", "description": "Student factors out part of the GCF but not all of it.", "examples": [{"problem": "Factor: 6x^2 + 12x", "wrong": "2(3x^2 + 6x)", "correct": "6x(x + 2)"}, {"problem": "Factor: 15x^3 + 10x^2", "wrong": "5(3x^3 + 2x^2)", "correct": "5x^2(3x + 2)"}]}
+            ]
+        },
+        {
+            "id": "quadratic_equations",
+            "name": "Solving Quadratic Equations",
+            "description": "Solving ax^2 + bx + c = 0 by factoring, quadratic formula, and completing the square.",
+            "level": 7,
+            "prerequisites": ["factoring_basic", "multi_step_equations"],
+            "bkt_params": {"p_init": 0.02, "p_learn": 0.05, "p_guess": 0.03, "p_slip": 0.15},
+            "misconceptions": [
+                {"id": "quad_formula_sign_b", "label": "Wrong sign on b in quadratic formula", "description": "Student uses +b instead of -b in the formula.", "examples": [{"problem": "Solve: x^2 + 6x + 5 = 0", "wrong": "x = (-6 +/- 4)/2 -> wrong", "correct": "x = -1 or x = -5"}, {"problem": "Solve: x^2 - 4x + 3 = 0", "wrong": "uses +4 in numerator", "correct": "x = 1 or x = 3"}]},
+                {"id": "quad_forget_plus_minus", "label": "Forget plus-or-minus in quadratic formula", "description": "Student only computes one root.", "examples": [{"problem": "Solve: x^2 - 5x + 6 = 0", "wrong": "x = 3 only", "correct": "x = 2 or x = 3"}, {"problem": "Solve: x^2 - 9 = 0", "wrong": "x = 3 only", "correct": "x = 3 or x = -3"}]},
+                {"id": "quad_zero_product_wrong", "label": "Set factors equal to each other instead of zero", "description": "After factoring, student sets factors equal to each other.", "examples": [{"problem": "Solve: (x - 2)(x + 3) = 0", "wrong": "x - 2 = x + 3, no solution", "correct": "x = 2 or x = -3"}, {"problem": "Solve: x(x - 5) = 0", "wrong": "x = x - 5", "correct": "x = 0 or x = 5"}]}
+            ]
+        }
+    ],
+    "edges": [
+        {"from": "integer_sign_ops", "to": "order_of_operations"},
+        {"from": "integer_sign_ops", "to": "exponent_rules"},
+        {"from": "integer_sign_ops", "to": "variables_expressions"},
+        {"from": "integer_sign_ops", "to": "coordinate_plane"},
+        {"from": "fractions_basic", "to": "ratios_proportions"},
+        {"from": "fractions_basic", "to": "slope_concept"},
+        {"from": "order_of_operations", "to": "distributive_property"},
+        {"from": "integer_sign_ops", "to": "distributive_property"},
+        {"from": "order_of_operations", "to": "combining_like_terms"},
+        {"from": "fractions_basic", "to": "fraction_equations"},
+        {"from": "ratios_proportions", "to": "fraction_equations"},
+        {"from": "variables_expressions", "to": "absolute_value"},
+        {"from": "integer_sign_ops", "to": "absolute_value"},
+        {"from": "combining_like_terms", "to": "solving_linear_equations"},
+        {"from": "distributive_property", "to": "solving_linear_equations"},
+        {"from": "solving_linear_equations", "to": "inequalities_basic"},
+        {"from": "solving_linear_equations", "to": "multi_step_equations"},
+        {"from": "distributive_property", "to": "multi_step_equations"},
+        {"from": "coordinate_plane", "to": "slope_concept"},
+        {"from": "slope_concept", "to": "linear_functions"},
+        {"from": "solving_linear_equations", "to": "linear_functions"},
+        {"from": "distributive_property", "to": "polynomials_basic"},
+        {"from": "combining_like_terms", "to": "polynomials_basic"},
+        {"from": "exponent_rules", "to": "polynomials_basic"},
+        {"from": "polynomials_basic", "to": "factoring_basic"},
+        {"from": "linear_functions", "to": "systems_of_equations"},
+        {"from": "multi_step_equations", "to": "systems_of_equations"},
+        {"from": "factoring_basic", "to": "quadratic_equations"},
+        {"from": "multi_step_equations", "to": "quadratic_equations"}
+    ]
+}
