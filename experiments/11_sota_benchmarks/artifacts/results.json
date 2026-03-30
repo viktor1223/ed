@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "experiment": "11_sota_benchmarks",
+    "n_students": 500,
+    "n_interactions": 60,
+    "seed": 42,
+    "date": "2026-03-30",
+    "description": "Comprehensive SOTA benchmark comparison for v3 simulated student"
+  },
+  "benchmarks": {
+    "error_recurrence": {
+      "metric": "error_recurrence_rate",
+      "our_value": 0.5291,
+      "n_applicable": 12468,
+      "n_fired": 6597,
+      "references": {
+        "BEAGLE_Wang_2026": {
+          "value": 0.862,
+          "domain": "Python programming",
+          "note": "Gemini 2.0 Flash"
+        },
+        "Vanilla_LLM": {
+          "value": 0.078,
+          "domain": "Python programming"
+        },
+        "Real_students": {
+          "value": 0.92,
+          "domain": "Python programming Turing test"
+        }
+      }
+    },
+    "performance_gap": {
+      "metric": "performance_gap",
+      "accuracy_gap_pct": 43.6,
+      "final_pk_gap": 0.452,
+      "gain_gap": -0.0082,
+      "cohens_d_accuracy": 4.568,
+      "cohens_d_gain": -1.008,
+      "high_accuracy_mean": 0.622,
+      "low_accuracy_mean": 0.186,
+      "high_gain_mean": 0.0106,
+      "low_gain_mean": 0.0188,
+      "high_final_pk": 0.64,
+      "low_final_pk": 0.189,
+      "initial_high": 0.63,
+      "initial_low": 0.17,
+      "n_per_group": 125,
+      "references": {
+        "BEAGLE_Wang_2026": {
+          "value": "+40%",
+          "domain": "Python task completion (absolute)"
+        },
+        "Vanilla_LLM": {
+          "value": "+0%",
+          "domain": "No profile differentiation"
+        }
+      }
+    },
+    "learning_curves": {
+      "metric": "learning_curve_shape",
+      "best_fit": "exponential",
+      "curves": {
+        "accuracy": {
+          "power_law_r2": 0.2637,
+          "power_law_params": [
+            -243.5853,
+            -0.0001,
+            243.9051
+          ],
+          "exponential_r2": 0.4161,
+          "exponential_params": [
+            157.9818,
+            0.0,
+            0.3366
+          ]
+        },
+        "p_know": {
+          "power_law_r2": 0.9988,
+          "power_law_params": [
+            0.0001,
+            1.1616,
+            0.3906
+          ],
+          "exponential_r2": 0.9962,
+          "exponential_params": [
+            113.3155,
+            0.0,
+            0.3898
+          ]
+        }
+      },
+      "mean_accuracy_trajectory": [
+        0.372,
+        0.358,
+        0.35,
+        0.312,
+        0.354,
+        0.324,
+        0.34,
+        0.342,
+        0.336,
+        0.354,
+        0.314,
+        0.358,
+        0.37,
+        0.33,
+        0.322,
+        0.36,
+        0.35,
+        0.382,
+        0.386,
+        0.356,
+        0.36,
+        0.324,
+        0.366,
+        0.368,
+        0.39,
+        0.348,
+        0.356,
+        0.37,
+        0.358,
+        0.364,
+        0.332,
+        0.348,
+        0.36,
+        0.35,
+        0.344,
+        0.39,
+        0.346,
+        0.346,
+        0.388,
+        0.398,
+        0.366,
+        0.376,
+        0.398,
+        0.372,
+        0.384,
+        0.376,
+        0.39,
+        0.384,
+        0.376,
+        0.412,
+        0.43,
+        0.4,
+        0.36,
+        0.374,
+        0.386,
+        0.35,
+        0.396,
+        0.388,
+        0.41,
+        0.4
+      ],
+      "mean_p_know_trajectory": [
+        0.3908,
+        0.391,
+        0.3913,
+        0.3915,
+        0.3917,
+        0.392,
+        0.3922,
+        0.3924,
+        0.3926,
+        0.3928,
+        0.3931,
+        0.3933,
+        0.3935,
+        0.3937,
+        0.394,
+        0.3942,
+        0.3944,
+        0.3947,
+        0.3949,
+        0.3952,
+        0.3955,
+        0.3958,
+        0.3962,
+        0.3965,
+        0.3967,
+        0.397,
+        0.3973,
+        0.3976,
+        0.3979,
+        0.3983,
+        0.3986,
+        0.399,
+        0.3993,
+        0.3998,
+        0.4001,
+        0.4004,
+        0.4007,
+        0.401,
+        0.4013,
+        0.4017,
+        0.402,
+        0.4024,
+        0.4027,
+        0.4031,
+        0.4033,
+        0.4036,
+        0.4039,
+        0.4042,
+        0.4044,
+        0.4047,
+        0.405,
+        0.4052,
+        0.4056,
+        0.4058,
+        0.4061,
+        0.4064,
+        0.4068,
+        0.4071,
+        0.4074,
+        0.4077
+      ],
+      "references": {
+        "Power_Law_of_Practice": {
+          "citation": "Newell & Rosenbloom (1981), Anderson (1982)",
+          "note": "Real students follow power law with R\u00b2 > 0.90"
+        },
+        "Pure_BKT": {
+          "note": "Produces exponential (geometric) mastery curves"
+        }
+      }
+    },
+    "misconception_stability": {
+      "metric": "misconception_stability",
+      "mean_agreement": 0.6761,
+      "std_agreement": 0.1266,
+      "n_students_probed": 50,
+      "n_runs": 10,
+      "references": {
+        "LLM_prompting_Scarlatos_2026": {
+          "note": "Highly variable; different error types between runs"
+        },
+        "Deterministic_model": {
+          "value": 1.0,
+          "note": "Same input always produces same output"
+        },
+        "Scarlatos_error_metric": {
+          "value_range": "0.02-0.19",
+          "note": "Error replication scores; even oracle only 0.19"
+        }
+      }
+    },
+    "response_prediction": {
+      "metric": "response_prediction_auc",
+      "auc": 0.6407,
+      "accuracy": 0.6531,
+      "ece": 0.2579,
+      "positive_rate": 0.3651,
+      "n_predictions": 30000,
+      "calibration": [
+        {
+          "bin": "0.0-0.1",
+          "n": 22247,
+          "predicted": 0.046,
+          "actual": 0.299
+        },
+        {
+          "bin": "0.1-0.2",
+          "n": 4379,
+          "predicted": 0.127,
+          "actual": 0.505
+        },
+        {
+          "bin": "0.2-0.3",
+          "n": 299,
+          "predicted": 0.244,
+          "actual": 0.595
+        },
+        {
+          "bin": "0.3-0.4",
+          "n": 228,
+          "predicted": 0.365,
+          "actual": 0.618
+        },
+        {
+          "bin": "0.4-0.5",
+          "n": 1197,
+          "predicted": 0.431,
+          "actual": 0.56
+        },
+        {
+          "bin": "0.5-0.6",
+          "n": 1046,
+          "predicted": 0.544,
+          "actual": 0.641
+        },
+        {
+          "bin": "0.6-0.7",
+          "n": 390,
+          "predicted": 0.633,
+          "actual": 0.687
+        },
+        {
+          "bin": "0.7-0.8",
+          "n": 136,
+          "predicted": 0.745,
+          "actual": 0.706
+        },
+        {
+          "bin": "0.8-0.9",
+          "n": 35,
+          "predicted": 0.837,
+          "actual": 0.8
+        },
+        {
+          "bin": "0.9-1.0",
+          "n": 43,
+          "predicted": 0.929,
+          "actual": 0.791
+        }
+      ],
+      "references": {
+        "BKT_Corbett_1995": {
+          "auc_range": "0.63-0.72",
+          "dataset": "various"
+        },
+        "DKT_Piech_2015": {
+          "auc_range": "0.80-0.86",
+          "dataset": "ASSISTments"
+        },
+        "AKT_Ghosh_2020": {
+          "auc_range": "0.77-0.85",
+          "dataset": "ASSISTments, Statics, EdNet"
+        },
+        "SAINT_Choi_2020": {
+          "auc_range": "0.78-0.83",
+          "dataset": "EdNet"
+        }
+      }
+    },
+    "sessions_to_resolution": {
+      "metric": "sessions_to_resolution",
+      "mean_sessions": 4.82,
+      "median_sessions": 5.0,
+      "std_sessions": 0.75,
+      "iqr": [
+        4.0,
+        5.0
+      ],
+      "n_resolved": 2078,
+      "n_unresolved": 0,
+      "references": {
+        "Corbett_Anderson_1995": {
+          "value": "~5 per KC",
+          "note": "BKT-based cognitive tutors"
+        },
+        "Ritter_2007": {
+          "value": "3-7",
+          "note": "Cognitive Tutor: Algebra field studies"
+        }
+      },
+      "resolution_counts_sample": [
+        6,
+        6,
+        5,
+        5,
+        4,
+        4,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5
+      ]
+    },
+    "instruction_sensitivity": {
+      "metric": "instruction_sensitivity",
+      "condition_means": {
+        "perfect": 0.0225,
+        "random": 0.0119,
+        "always_wrong": 0.0,
+        "no_instruction": 0.0
+      },
+      "cohens_d_perf_wrong": 2.153,
+      "cohens_d_perf_rand": 0.856,
+      "cohens_d_perf_none": 2.153,
+      "n_students": 500,
+      "n_interactions": 60,
+      "references": {
+        "Cohen_1988": {
+          "small": 0.2,
+          "medium": 0.5,
+          "large": 0.8,
+          "note": "Conventional effect size thresholds"
+        }
+      }
+    },
+    "negative_transfer": {
+      "metric": "negative_transfer",
+      "negative_transfer_detected": true,
+      "perfect_final": 0.4077,
+      "switch_final": 0.3981,
+      "switch_midpoint": 0.3981,
+      "none_final": 0.3906,
+      "p_know_loss_vs_perfect": 0.0096,
+      "regression_from_midpoint": 0.0,
+      "cohens_d": 0.055,
+      "t_statistic": 0.865,
+      "p_value": 0.3875,
+      "misconception_change_perfect": -0.3753,
+      "misconception_change_switch": -0.1636,
+      "misconception_change_none": 0.0,
+      "confusion_perfect": 0.07,
+      "confusion_switch": 30.05,
+      "references": {
+        "BEAGLE_Wang_2026": {
+          "negative_transfer": "No",
+          "note": "Prevents self-correction via observation filtering, but does not reinforce misconceptions"
+        },
+        "MalAlgoPy_Sonkar_2024": {
+          "negative_transfer": "No",
+          "note": "Static misconception profiles; no learning dynamics"
+        },
+        "Interference_theory": {
+          "citation": "Anderson (1983), Baddeley (1976)",
+          "note": "Predicts proactive/retroactive interference from incorrect instruction"
+        }
+      }
+    }
+  },
+  "summary_table": [
+    [
+      "Error Recurrence Rate",
+      "52.9%",
+      "86.2%",
+      "BEAGLE (Wang 2026)"
+    ],
+    [
+      "Accuracy Gap (High vs Low)",
+      "+43.6 pct pts",
+      "+40%",
+      "BEAGLE (Wang 2026)"
+    ],
+    [
+      "p_know Gap (High vs Low)",
+      "+0.452",
+      "N/A",
+      "(absolute mastery)"
+    ],
+    [
+      "Learning Curve R\u00b2 (power law)",
+      "0.264",
+      "> 0.90",
+      "Newell & Rosenbloom 1981"
+    ],
+    [
+      "Learning Curve R\u00b2 (p_know, pow)",
+      "0.999",
+      "> 0.90",
+      "Newell & Rosenbloom 1981"
+    ],
+    [
+      "Misconception Stability",
+      "67.6%",
+      "variable",
+      "Scarlatos (2026)"
+    ],
+    [
+      "Response Prediction AUC",
+      "0.641",
+      "0.63-0.72",
+      "BKT literature"
+    ],
+    [
+      "Sessions to Resolution (median)",
+      "5.0",
+      "3-7",
+      "Cognitive tutor lit"
+    ],
+    [
+      "Instruction Sensitivity (d)",
+      "2.15",
+      "N/A (novel)",
+      "Our contribution"
+    ],
+    [
+      "Negative Transfer (switch)",
+      "YES",
+      "Not modeled",
+      "Interference theory"
+    ],
+    [
+      "  p_know loss vs perfect",
+      "0.0096",
+      "N/A",
+      "(novel)"
+    ]
+  ]
+}
